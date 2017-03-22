@@ -1,39 +1,30 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
-/**
- *
- * @author Hristian Vitrychenko
- */
-import java.io.File;
-import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.io.InputStream;
-import org.apache.commons.io.IOUtils;
+import org.json.simple.parser.JSONParser;
+import java.io.FileReader;
+import org.json.simple.JSONObject;
 
-import org.json.JSONObject;
- 
-public class Data 
-{
-    public JSONObject getLocation(String add) throws FileNotFoundException, IOException
-    {
-        File f = new File("C:\\Location.json");
-        if (f.exists())
-        {
-            InputStream is = new FileInputStream("C:\\Location.json");
-            String jsonTxt = IOUtils.toString(is);
-            JSONObject json = new JSONObject(jsonTxt);       
-            
-            if(json != null)
-            {
-                return json; 
-            }
+
+public class Data implements Data_Interface {
+    public JSONObject getLocation(String add) throws FileNotFoundException, IOException {
+
+        Object obj = null;
+
+        try {
+            JSONParser parser = new JSONParser();
+            obj = parser.parse(new FileReader("Location.json"));
+
+        } catch (Exception e) {
+
+            e.printStackTrace();
         }
-        
-        return null; 
+
+        JSONObject jsonObject = (JSONObject) obj;
+        return jsonObject;
+
     }
 }
+        
+
+
+
