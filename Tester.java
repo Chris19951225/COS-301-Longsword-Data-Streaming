@@ -1,15 +1,13 @@
-import java.io.IOException;
-import org.json.simple.JSONObject;
-
-public class Tester 
+public class Tester
 {
     
-    public static void main(String [] args) throws IOException
-    {
+    public static void main(String [] args) {
         Data pack = new Data(); 
         
-        JSONObject test = pack.getLocation("00:A0:C9:14:C8:29");
-        System.out.println(test); 
+        Coordinates test = pack.getLocation("01:B1:D6:19:f8:33");
+        System.out.println(test.getLatitude());
+        System.out.println(test.getLongitude());
+        System.out.println(test.getAltitude());
     }
     
 }
