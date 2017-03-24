@@ -57,7 +57,8 @@ public class DataTest
         Assert.assertEquals(controlCoordinates1.getCoordinates(), pack.getLocation("01:B1:D6:19:f8:33").getCoordinates());
         //Invalid
         Assert.assertEquals(controlCoordinates4.getCoordinates(), pack.getLocation("01B1D619f833").getCoordinates());
-
+        //Valid 
+        Assert.assertEquals(controlCoordinates4.getCoordinates(), pack.getLocation("02:B1:D6:19:f8:43").getCoordinates());
 
 
     }
