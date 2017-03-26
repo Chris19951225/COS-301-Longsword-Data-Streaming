@@ -6,10 +6,20 @@
 Data Streaming module of the NavUP system 
 # Members
 Peter Boxall - [Linkedin]
+
+
 Claude Greeff - [Linkedin](https://www.linkedin.com/in/claude-greeff/)
+
+
 Hristian Vitrychenko - [Linkedin]
+
+
 Ritesh Doolabh - [Linkedin](https://www.linkedin.com/in/ritesh-doolabh-149b9813a/)
+
+
 Lucian Sargeant - [Linkedin](https://www.linkedin.com/in/lucian-sargeant-8b2268132/)
+
+
 Harris Leshaba - [Linkedin]
 # Scope
 The data module concerns itself with two primary agents: the system server and the
