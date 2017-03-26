@@ -8,7 +8,7 @@ Data Streaming module of the NavUP system
 Peter Boxall - [Linkedin]
 
 
-Claude Greeff - [Linkedin]<https://www.linkedin.com/in/claude-greeff/ target="_blank">
+Claude Greeff - <a href="https://www.linkedin.com/in/claude-greeff/" target="_blank"> Linkedin</a>
 
 
 Hristian Vitrychenko - [Linkedin]
