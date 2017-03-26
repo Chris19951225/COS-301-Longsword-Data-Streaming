@@ -10,7 +10,7 @@ generic user access channel which can be 1 of 3 possibilities who all behave in 
 same way/support the same behaviour. The data module concerns itself primarily
 with the act of moving information between the two entities. The exact format of this
 and the exact specifics are not contained in this; rather, the messages and their
-formats and contents must be independent of the actual carriage medium.
+formats and contents must be independent of the actual carriage medium. <br />
 ![alt tag](https://s21.postimg.org/him68qvvb/Class_Diagram.png)
 # Technologies
 There are few fully open source data streaming technologies available. However, Apache
