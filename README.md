@@ -4,6 +4,13 @@
 [![Stories in Done](https://badge.waffle.io/waffle.io/Chris19951225/COS-301-Longsword-Data-Streaming.png?label=done&title=Done)](https://waffle.io/Chris19951225/COS-301-Longsword-Data-Streaming) 
 # COS-301-Longsword-Data-Streaming
 Data Streaming module of the NavUP system 
+# Members
+Peter Boxall - [Linkedin]
+Claude Greeff - [Linkedin](https://www.linkedin.com/in/claude-greeff/)
+Hristian Vitrychenko - [Linkedin]
+Ritesh Doolabh - [Linkedin](https://www.linkedin.com/in/ritesh-doolabh-149b9813a/)
+Lucian Sargeant - [Linkedin](https://www.linkedin.com/in/lucian-sargeant-8b2268132/)
+Harris Leshaba - [Linkedin]
 # Scope
 The data module concerns itself with two primary agents: the system server and the
 generic user access channel which can be 1 of 3 possibilities who all behave in the
