@@ -30,7 +30,7 @@ and the exact specifics are not contained in this; rather, the messages and thei
 formats and contents must be independent of the actual carriage medium.
 
 
-![alt tag](https://s21.postimg.org/him68qvvb/Class_Diagram.png)
+![alt tag](https://s2.postimg.org/9n976t2vt/Class_Diagram.png)
 # Technologies
 There are few fully open source data streaming technologies available. However, Apache
 Flink is a fully open source stream processing framework with a full DataStreaming API.
