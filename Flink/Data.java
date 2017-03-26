@@ -59,23 +59,10 @@ public class Data {
 
         // the host and the port to connect to
         final String hostname = "localhost";
-        final int port = 9000;
-        /*try {
-            final ParameterTool params = ParameterTool.fromArgs(args);
-            hostname = params.has("hostname") ? params.get("hostname") : "localhost";
-            port = params.getInt("port");
-        } catch (Exception e) {
-            System.err.println("No port specified. Please run 'SocketWindowWordCount " +
-                    "--hostname <hostname> --port <port>', where hostname (localhost by default) " +
-                    "and port is the address of the text server");
-            System.err.println("To start a simple text server, run 'netcat -l <port>' and " +
-                    "type the input text into the command line");
-            return;
-        }*/
+        final int port = 9000;         
 
         // get the execution environment
         final StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
-
         
         //tmp.writeToSocket("localhost",9000,new SimpleStringSchema());
 
@@ -101,25 +88,7 @@ public class Data {
                }
 
             }
-        });
-
-
-
-
-        // print the results with a single thread, rather than in parallel
-        // windowCounts.print().setParallelism(1);
-
-
-
-        // write to socket
-        /*SerializationSchema<String> simpleSchema = new SerializationSchema<String>() {
-            @Override
-            public byte[] serialize(String String) {
-                return new byte[0];
-            }
-        };
-
-        windowCounts.writeToSocket("localhost",9001, simpleSchema);*/
+        });       
 
         // print to standard out
         windowCounts.printToErr().setParallelism(1);
@@ -130,7 +99,8 @@ public class Data {
     // ------------------------------------------------------------------------
 
     /**
-     * Data type for words with count
+     * Providing getLocation service.
+       Returning a JSON object as initially requested from integration.
      */
 
     public static JSONObject getLocation() throws FileNotFoundException, IOException {
@@ -150,10 +120,7 @@ public class Data {
 
             e.printStackTrace();
         }
-
-
         return obj;
-
     }
 }
 
