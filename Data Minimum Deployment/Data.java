@@ -1,4 +1,8 @@
-//import org.json.JSONObject;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
+
+import java.util.Map;
 
 public class Data implements Data_Interface {
     public String getLocation(String add) {
@@ -30,7 +34,16 @@ public class Data implements Data_Interface {
                     " }";
         }
 
-        //JSONObject jsonObj = new JSONObject(jsonString.toString());
+        /*
+        JSONParser coordinatesParser = new JSONParser();
+        JSONObject co = null;
+        try {
+           co = (JSONObject) coordinatesParser.parse(coordinates);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        */
+
         return coordinates;
 
     }

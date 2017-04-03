@@ -1,3 +1,5 @@
+import org.json.simple.JSONObject;
+
 public class Tester
 {
 
@@ -6,6 +8,9 @@ public class Tester
 
         String test = pack.getLocation("01:B1:D6:19:f8:33");
         System.out.println(test);
+
+        //JSONObject test = pack.getLocation("01:B1:D6:19:f8:33");
+        //test.get("Latitude");
     }
 
 }
