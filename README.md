@@ -11,7 +11,7 @@ Peter Boxall -
 Claude Greeff - <a href="https://www.linkedin.com/in/claude-greeff/" target="_blank"> Linkedin</a>
 
 
-Hristian Vitrychenko - 
+Hristian Vitrychenko - <a href="https://github.com/Chris19951225" target="_blank">Github</a>
 
 
 Ritesh Doolabh - <a href="https://www.linkedin.com/in/ritesh-doolabh-149b9813a/" target="_blank"> Linkedin</a>
