@@ -1,10 +1,8 @@
 import java.io.*;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.util.concurrent.TimeUnit;
 
-/**
- * Created by Lucian on 4/14/2017.
- */
 public class TestServerRequester
 {
     public static void main(String[] argc) throws IOException
@@ -40,14 +38,20 @@ public class TestServerRequester
             pw = new PrintWriter(os, true);
         }
 
-        for(int i = 0; i < 100; i++)
+        long startTime = System.nanoTime();
+
+        for(int i = 0; i < 25000; i++)
         {
             pw.println(i);
         }
 
+        long endTime = System.nanoTime();
+
+        System.out.println("Time to send 25000 requests: " + TimeUnit.NANOSECONDS.toMillis(endTime - startTime) + " milliseconds.");
 
         // Close the connection
         pw.close();
         socket.close();
     }
 }
+
