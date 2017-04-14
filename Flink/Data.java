@@ -18,17 +18,12 @@ package org.apache.flink;
  * limitations under the License.
  */
 
-import org.apache.flink.api.common.functions.FlatMapFunction;
+import org.apache.flink.api.common.functions.MapFunction;
 import org.apache.flink.streaming.api.datastream.DataStream;
 import org.apache.flink.streaming.api.environment.StreamExecutionEnvironment;
 import org.apache.flink.streaming.api.functions.sink.SocketClientSink;
 import org.apache.flink.streaming.util.serialization.SimpleStringSchema;
-import org.apache.flink.util.Collector;
 import org.apache.sling.commons.json.JSONObject;
-
-import java.io.FileNotFoundException;
-import java.io.IOException;
-
 
 /**
  * Implements a streaming windowed version of the "WordCount" program.
@@ -42,56 +37,51 @@ import java.io.IOException;
  * and run this example with the hostname and the port as arguments.
  */
 @SuppressWarnings("serial")
-public class Data {
+public class Data
+{
+    public static void main(String[] args) throws Exception
+    {
 
-
-
-    public static void main(String[] args) throws Exception {
-
-        // the host and the port to connect to
+        // The host and the port to connect to
         final String hostname = "localhost";
         final int port = 9000;
-        final int outputPort = 9002;
+        final int outputPort = 9004;
 
-        // get the execution environment
+        // Get the execution environment
         final StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
 
-        // get input data by connecting to the socket
+        // Sets the parallelism for operations executed through this environment. Setting a parallelism of x here will cause all operators (such as join, map, reduce) to run with x parallel instances.
+        env.setParallelism(4);
+
+        // Create a data stream to receive text via a socket
         DataStream<String> text = env.socketTextStream(hostname, port, "\n");
 
-        // parse the data, group it, window it, and aggregate the counts
-        DataStream<String> windowCounts = text
+        DataStream<String> locationRequests = text
 
-        .flatMap(new FlatMapFunction<String, String>() {
-            @Override
-            public void flatMap(String value, Collector<String> out) {
-               try
-               {
-                   JSONObject obj = getLocation();
-                   String str = obj.toString();
-                   out.collect("MAC-Address: " + value + " with location: " +str + "\n");
-               }
-               catch(Exception e)
-               {
-                    System.out.println("Error");
-               }
-
+        .map(new MapFunction<String, String>() {
+            public String map(String value)
+            {
+                JSONObject obj = getLocation();
+                String str = obj.toString();
+                return ("MAC-Address: " + value + " with location: " +str + "\n");
             }
         });
 
-        // Add data sink to return sanitised data
-        windowCounts.addSink(new SocketClientSink<String>("localhost",outputPort, new SimpleStringSchema()));
 
-        env.execute("Socket Window WordCount");
+        // Add data sink to return sanitis  ed data
+       locationRequests.addSink(new SocketClientSink<String>("localhost",outputPort, new SimpleStringSchema(),-1));
+
+       // Triggers the program execution. The environment will execute all parts of the program that have resulted in a "sink" operation.
+       env.execute("Data");
     }
 
     // ------------------------------------------------------------------------
 
-    /**
-     * Data type for words with count
+     /**
+     * Data type
      */
 
-    public static JSONObject getLocation() throws FileNotFoundException, IOException {
+    public static JSONObject getLocation(){
 
         JSONObject obj = null;
 
@@ -114,4 +104,3 @@ public class Data {
 
     }
 }
-
