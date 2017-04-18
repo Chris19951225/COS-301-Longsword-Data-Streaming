@@ -1,0 +1,210 @@
+2017-04-14 15:08:16,428 WARN  org.apache.hadoop.util.NativeCodeLoader                       - Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+2017-04-14 15:08:16,498 ERROR org.apache.hadoop.util.Shell                                  - Failed to locate the winutils binary in the hadoop binary path
+java.io.IOException: Could not locate executable null\bin\winutils.exe in the Hadoop binaries.
+	at org.apache.hadoop.util.Shell.getQualifiedBinPath(Shell.java:318)
+	at org.apache.hadoop.util.Shell.getWinUtilsPath(Shell.java:333)
+	at org.apache.hadoop.util.Shell.<clinit>(Shell.java:326)
+	at org.apache.hadoop.util.StringUtils.<clinit>(StringUtils.java:76)
+	at org.apache.hadoop.security.Groups.parseStaticMapping(Groups.java:92)
+	at org.apache.hadoop.security.Groups.<init>(Groups.java:76)
+	at org.apache.hadoop.security.Groups.getUserToGroupsMappingService(Groups.java:239)
+	at org.apache.hadoop.security.UserGroupInformation.initialize(UserGroupInformation.java:255)
+	at org.apache.hadoop.security.UserGroupInformation.ensureInitialized(UserGroupInformation.java:232)
+	at org.apache.hadoop.security.UserGroupInformation.loginUserFromSubject(UserGroupInformation.java:718)
+	at org.apache.hadoop.security.UserGroupInformation.getLoginUser(UserGroupInformation.java:703)
+	at org.apache.hadoop.security.UserGroupInformation.getCurrentUser(UserGroupInformation.java:605)
+	at org.apache.flink.runtime.util.EnvironmentInformation.getUserRunning(EnvironmentInformation.java:91)
+	at org.apache.flink.runtime.util.EnvironmentInformation.logEnvironmentInfo(EnvironmentInformation.java:267)
+	at org.apache.flink.runtime.jobmanager.JobManager$.main(JobManager.scala:1920)
+	at org.apache.flink.runtime.jobmanager.JobManager.main(JobManager.scala)
+2017-04-14 15:08:16,517 INFO  org.apache.flink.runtime.jobmanager.JobManager                - --------------------------------------------------------------------------------
+2017-04-14 15:08:16,517 INFO  org.apache.flink.runtime.jobmanager.JobManager                -  Starting JobManager (Version: 1.2.0, Rev:1c659cf, Date:29.01.2017 @ 21:19:15 UTC)
+2017-04-14 15:08:16,517 INFO  org.apache.flink.runtime.jobmanager.JobManager                -  Current user: Ritz
+2017-04-14 15:08:16,517 INFO  org.apache.flink.runtime.jobmanager.JobManager                -  JVM: Java HotSpot(TM) 64-Bit Server VM - Oracle Corporation - 1.8/25.91-b14
+2017-04-14 15:08:16,517 INFO  org.apache.flink.runtime.jobmanager.JobManager                -  Maximum heap size: 736 MiBytes
+2017-04-14 15:08:16,517 INFO  org.apache.flink.runtime.jobmanager.JobManager                -  JAVA_HOME: (not set)
+2017-04-14 15:08:16,520 INFO  org.apache.flink.runtime.jobmanager.JobManager                -  Hadoop version: 2.3.0
+2017-04-14 15:08:16,520 INFO  org.apache.flink.runtime.jobmanager.JobManager                -  JVM Options:
+2017-04-14 15:08:16,521 INFO  org.apache.flink.runtime.jobmanager.JobManager                -     -Xms768m
+2017-04-14 15:08:16,521 INFO  org.apache.flink.runtime.jobmanager.JobManager                -     -Xmx768m
+2017-04-14 15:08:16,521 INFO  org.apache.flink.runtime.jobmanager.JobManager                -     -Dlog.file=C:\Users\Ritz\Google Drive\2017\Semester 1\COS 301\Assignments\Class Project\Phase 3\Flink\flink-1.2.0\bin\..\log\flink-Ritz-jobmanager-RITS-LENOVO.log
+2017-04-14 15:08:16,521 INFO  org.apache.flink.runtime.jobmanager.JobManager                -     -Dlogback.configurationFile=file:C:\Users\Ritz\Google Drive\2017\Semester 1\COS 301\Assignments\Class Project\Phase 3\Flink\flink-1.2.0\bin\..\conf/logback.xml
+2017-04-14 15:08:16,521 INFO  org.apache.flink.runtime.jobmanager.JobManager                -     -Dlog4j.configuration=file:C:\Users\Ritz\Google Drive\2017\Semester 1\COS 301\Assignments\Class Project\Phase 3\Flink\flink-1.2.0\bin\..\conf/log4j.properties
+2017-04-14 15:08:16,521 INFO  org.apache.flink.runtime.jobmanager.JobManager                -  Program Arguments:
+2017-04-14 15:08:16,521 INFO  org.apache.flink.runtime.jobmanager.JobManager                -     --configDir
+2017-04-14 15:08:16,521 INFO  org.apache.flink.runtime.jobmanager.JobManager                -     C:\Users\Ritz\Google Drive\2017\Semester 1\COS 301\Assignments\Class Project\Phase 3\Flink\flink-1.2.0\bin\..\conf
+2017-04-14 15:08:16,521 INFO  org.apache.flink.runtime.jobmanager.JobManager                -     --executionMode
+2017-04-14 15:08:16,522 INFO  org.apache.flink.runtime.jobmanager.JobManager                -     local
+2017-04-14 15:08:16,522 INFO  org.apache.flink.runtime.jobmanager.JobManager                -  Classpath: C:\Users\Ritz\Google Drive\2017\Semester 1\COS 301\Assignments\Class Project\Phase 3\Flink\flink-1.2.0\bin\..\lib\flink-dist_2.10-1.2.0.jar;C:\Users\Ritz\Google Drive\2017\Semester 1\COS 301\Assignments\Class Project\Phase 3\Flink\flink-1.2.0\bin\..\lib\flink-python_2.10-1.2.0.jar;C:\Users\Ritz\Google Drive\2017\Semester 1\COS 301\Assignments\Class Project\Phase 3\Flink\flink-1.2.0\bin\..\lib\log4j-1.2.17.jar;C:\Users\Ritz\Google Drive\2017\Semester 1\COS 301\Assignments\Class Project\Phase 3\Flink\flink-1.2.0\bin\..\lib\slf4j-log4j12-1.7.7.jar;
+2017-04-14 15:08:16,522 INFO  org.apache.flink.runtime.jobmanager.JobManager                - --------------------------------------------------------------------------------
+2017-04-14 15:08:16,523 INFO  org.apache.flink.runtime.jobmanager.JobManager                - Error while registering signal handler
+java.lang.IllegalArgumentException: Unknown signal: HUP
+	at sun.misc.Signal.<init>(Unknown Source)
+	at org.apache.flink.runtime.util.SignalHandler$Handler.<init>(SignalHandler.java:41)
+	at org.apache.flink.runtime.util.SignalHandler.register(SignalHandler.java:78)
+	at org.apache.flink.runtime.jobmanager.JobManager$.main(JobManager.scala:1921)
+	at org.apache.flink.runtime.jobmanager.JobManager.main(JobManager.scala)
+2017-04-14 15:08:16,523 INFO  org.apache.flink.runtime.jobmanager.JobManager                - Registered UNIX signal handlers for [TERM, INT]
+2017-04-14 15:08:16,678 INFO  org.apache.flink.runtime.jobmanager.JobManager                - Loading configuration from C:\Users\Ritz\Google Drive\2017\Semester 1\COS 301\Assignments\Class Project\Phase 3\Flink\flink-1.2.0\bin\..\conf
+2017-04-14 15:08:16,681 INFO  org.apache.flink.configuration.GlobalConfiguration            - Loading configuration property: jobmanager.rpc.address, localhost
+2017-04-14 15:08:16,681 INFO  org.apache.flink.configuration.GlobalConfiguration            - Loading configuration property: jobmanager.rpc.port, 6123
+2017-04-14 15:08:16,681 INFO  org.apache.flink.configuration.GlobalConfiguration            - Loading configuration property: jobmanager.heap.mb, 256
+2017-04-14 15:08:16,681 INFO  org.apache.flink.configuration.GlobalConfiguration            - Loading configuration property: taskmanager.heap.mb, 512
+2017-04-14 15:08:16,682 INFO  org.apache.flink.configuration.GlobalConfiguration            - Loading configuration property: taskmanager.numberOfTaskSlots, 4
+2017-04-14 15:08:16,682 INFO  org.apache.flink.configuration.GlobalConfiguration            - Loading configuration property: taskmanager.memory.preallocate, false
+2017-04-14 15:08:16,682 INFO  org.apache.flink.configuration.GlobalConfiguration            - Loading configuration property: parallelism.default, 4
+2017-04-14 15:08:16,682 INFO  org.apache.flink.configuration.GlobalConfiguration            - Loading configuration property: jobmanager.web.port, 8081
+2017-04-14 15:08:16,690 INFO  org.apache.flink.runtime.jobmanager.JobManager                - Starting JobManager without high-availability
+2017-04-14 15:08:16,693 INFO  org.apache.flink.runtime.jobmanager.JobManager                - Starting JobManager on localhost:6123 with execution mode LOCAL
+2017-04-14 15:08:16,702 INFO  org.apache.flink.configuration.GlobalConfiguration            - Loading configuration property: jobmanager.rpc.address, localhost
+2017-04-14 15:08:16,702 INFO  org.apache.flink.configuration.GlobalConfiguration            - Loading configuration property: jobmanager.rpc.port, 6123
+2017-04-14 15:08:16,702 INFO  org.apache.flink.configuration.GlobalConfiguration            - Loading configuration property: jobmanager.heap.mb, 256
+2017-04-14 15:08:16,702 INFO  org.apache.flink.configuration.GlobalConfiguration            - Loading configuration property: taskmanager.heap.mb, 512
+2017-04-14 15:08:16,702 INFO  org.apache.flink.configuration.GlobalConfiguration            - Loading configuration property: taskmanager.numberOfTaskSlots, 4
+2017-04-14 15:08:16,702 INFO  org.apache.flink.configuration.GlobalConfiguration            - Loading configuration property: taskmanager.memory.preallocate, false
+2017-04-14 15:08:16,702 INFO  org.apache.flink.configuration.GlobalConfiguration            - Loading configuration property: parallelism.default, 4
+2017-04-14 15:08:16,702 INFO  org.apache.flink.configuration.GlobalConfiguration            - Loading configuration property: jobmanager.web.port, 8081
+2017-04-14 15:08:16,733 INFO  org.apache.flink.runtime.security.modules.HadoopModule        - Hadoop user set to Ritz (auth:SIMPLE)
+2017-04-14 15:08:16,943 INFO  org.apache.flink.runtime.jobmanager.JobManager                - Starting JobManager actor system reachable at localhost:6123
+2017-04-14 15:08:17,256 INFO  akka.event.slf4j.Slf4jLogger                                  - Slf4jLogger started
+2017-04-14 15:08:17,290 INFO  Remoting                                                      - Starting remoting
+2017-04-14 15:08:17,507 INFO  Remoting                                                      - Remoting started; listening on addresses :[akka.tcp://flink@localhost:6123]
+2017-04-14 15:08:17,512 INFO  org.apache.flink.runtime.jobmanager.JobManager                - Starting JobManager web frontend
+2017-04-14 15:08:17,529 INFO  org.apache.flink.runtime.webmonitor.WebMonitorUtils           - Determined location of JobManager log file: C:\Users\Ritz\Google Drive\2017\Semester 1\COS 301\Assignments\Class Project\Phase 3\Flink\flink-1.2.0\bin\..\log\flink-Ritz-jobmanager-RITS-LENOVO.log
+2017-04-14 15:08:17,529 INFO  org.apache.flink.runtime.webmonitor.WebMonitorUtils           - Determined location of JobManager stdout file: C:\Users\Ritz\Google Drive\2017\Semester 1\COS 301\Assignments\Class Project\Phase 3\Flink\flink-1.2.0\bin\..\log\flink-Ritz-jobmanager-RITS-LENOVO.out
+2017-04-14 15:08:17,531 INFO  org.apache.flink.runtime.webmonitor.WebRuntimeMonitor         - Using directory C:\Users\Ritz\AppData\Local\Temp\flink-web-cef4d062-2f01-4d20-922c-89e50d467945 for the web interface files
+2017-04-14 15:08:17,532 INFO  org.apache.flink.runtime.webmonitor.WebRuntimeMonitor         - Using directory C:\Users\Ritz\AppData\Local\Temp\flink-web-5e755bfd-eca4-424b-8975-2c76ca293d0d for web frontend JAR file uploads
+2017-04-14 15:08:17,893 INFO  org.apache.flink.runtime.webmonitor.WebRuntimeMonitor         - Web frontend listening at 0:0:0:0:0:0:0:0:8081
+2017-04-14 15:08:17,894 INFO  org.apache.flink.runtime.jobmanager.JobManager                - Starting JobManager actor
+2017-04-14 15:08:17,899 INFO  org.apache.flink.runtime.blob.BlobServer                      - Created BLOB server storage directory C:\Users\Ritz\AppData\Local\Temp\blobStore-fefd9dba-3406-4898-8639-67e0c0105e84
+2017-04-14 15:08:17,901 INFO  org.apache.flink.runtime.blob.BlobServer                      - Started BLOB server at 0.0.0.0:53241 - max concurrent requests: 50 - max backlog: 1000
+2017-04-14 15:08:17,911 INFO  org.apache.flink.runtime.metrics.MetricRegistry               - No metrics reporter configured, no metrics will be exposed/reported.
+2017-04-14 15:08:17,917 INFO  org.apache.flink.runtime.jobmanager.JobManager                - Starting embedded TaskManager for JobManager's LOCAL execution mode
+2017-04-14 15:08:17,921 INFO  org.apache.flink.runtime.jobmanager.MemoryArchivist           - Started memory archivist akka://flink/user/archive
+2017-04-14 15:08:17,922 INFO  org.apache.flink.runtime.jobmanager.JobManager                - Starting JobManager at akka.tcp://flink@localhost:6123/user/jobmanager.
+2017-04-14 15:08:17,931 INFO  org.apache.flink.runtime.taskmanager.TaskManager              - Messages between TaskManager and JobManager have a max timeout of 10000 milliseconds
+2017-04-14 15:08:17,939 INFO  org.apache.flink.runtime.taskmanager.TaskManager              - Temporary file directory 'C:\Users\Ritz\AppData\Local\Temp': total 838 GB, usable 123 GB (14.68% usable)
+2017-04-14 15:08:17,977 INFO  org.apache.flink.runtime.io.network.buffer.NetworkBufferPool  - Allocated 64 MB for network buffer pool (number of memory segments: 2048, bytes per segment: 32768).
+2017-04-14 15:08:18,021 INFO  org.apache.flink.runtime.io.network.NetworkEnvironment        - Starting the network environment and its components.
+2017-04-14 15:08:18,025 WARN  org.apache.flink.runtime.taskmanager.TaskManagerLocation      - No hostname could be resolved for the IP address 127.0.0.1, using IP address as host name. Local input split assignment (such as for HDFS files) may be impacted.
+2017-04-14 15:08:18,129 INFO  org.apache.flink.runtime.taskmanager.TaskManager              - Limiting managed memory to 0.7 of the currently free heap space (461 MB), memory will be allocated lazily.
+2017-04-14 15:08:18,133 INFO  org.apache.flink.runtime.io.disk.iomanager.IOManager          - I/O manager uses directory C:\Users\Ritz\AppData\Local\Temp\flink-io-d33c5e4c-8ca8-4ddf-86d8-440567c48525 for spill files.
+2017-04-14 15:08:18,136 INFO  org.apache.flink.runtime.metrics.MetricRegistry               - No metrics reporter configured, no metrics will be exposed/reported.
+2017-04-14 15:08:18,143 INFO  org.apache.flink.runtime.filecache.FileCache                  - User file cache uses directory C:\Users\Ritz\AppData\Local\Temp\flink-dist-cache-5a4c2bbb-80c5-4f9e-a089-65b18c9ae0c7
+2017-04-14 15:08:18,144 INFO  org.apache.flink.runtime.webmonitor.WebRuntimeMonitor         - Starting with JobManager akka.tcp://flink@localhost:6123/user/jobmanager on port 8081
+2017-04-14 15:08:18,145 INFO  org.apache.flink.runtime.webmonitor.JobManagerRetriever       - New leader reachable under akka.tcp://flink@localhost:6123/user/jobmanager:null.
+2017-04-14 15:08:18,156 INFO  org.apache.flink.runtime.clusterframework.standalone.StandaloneResourceManager  - Trying to associate with JobManager leader akka.tcp://flink@localhost:6123/user/jobmanager
+2017-04-14 15:08:18,157 INFO  org.apache.flink.runtime.taskmanager.TaskManager              - Starting TaskManager actor at akka://flink/user/taskmanager#-739177271.
+2017-04-14 15:08:18,157 INFO  org.apache.flink.runtime.taskmanager.TaskManager              - TaskManager data connection information: ResourceID{resourceId='63df2a9188e911b56b90ab054c5712e6'} @ 127.0.0.1 (dataPort=-1)
+2017-04-14 15:08:18,158 INFO  org.apache.flink.runtime.taskmanager.TaskManager              - TaskManager has 4 task slot(s).
+2017-04-14 15:08:18,159 INFO  org.apache.flink.runtime.taskmanager.TaskManager              - Memory usage stats: [HEAP: 82/736/736 MB, NON HEAP: 34/35/-1 MB (used/committed/max)]
+2017-04-14 15:08:18,166 INFO  org.apache.flink.runtime.taskmanager.TaskManager              - Trying to register at JobManager akka.tcp://flink@localhost:6123/user/jobmanager (attempt 1, timeout: 500 milliseconds)
+2017-04-14 15:08:18,412 INFO  org.apache.flink.runtime.jobmanager.JobManager                - JobManager akka.tcp://flink@localhost:6123/user/jobmanager was granted leadership with leader session ID None.
+2017-04-14 15:08:18,423 INFO  org.apache.flink.runtime.clusterframework.standalone.StandaloneResourceManager  - Resource Manager associating with leading JobManager Actor[akka://flink/user/jobmanager#418519704] - leader session null
+2017-04-14 15:08:18,428 INFO  org.apache.flink.runtime.instance.InstanceManager             - Registered TaskManager at 127.0.0.1 (akka://flink/user/taskmanager) as 264d03420feae19861976570861ac0ac. Current number of registered hosts is 1. Current number of alive task slots is 4.
+2017-04-14 15:08:18,431 INFO  org.apache.flink.runtime.clusterframework.standalone.StandaloneResourceManager  - TaskManager ResourceID{resourceId='63df2a9188e911b56b90ab054c5712e6'} has started.
+2017-04-14 15:08:18,433 INFO  org.apache.flink.runtime.taskmanager.TaskManager              - Successful registration at JobManager (akka://flink/user/jobmanager), starting network stack and library cache.
+2017-04-14 15:08:18,437 INFO  org.apache.flink.runtime.taskmanager.TaskManager              - Determined BLOB server address to be localhost/127.0.0.1:53241. Starting BLOB cache.
+2017-04-14 15:08:18,443 INFO  org.apache.flink.runtime.blob.BlobCache                       - Created BLOB cache storage directory C:\Users\Ritz\AppData\Local\Temp\blobStore-0347fd66-8aaf-4e3a-8f52-ce297e91814d
+2017-04-14 15:08:23,472 INFO  org.apache.flink.runtime.jobmanager.JobManager                - Submitting job a47a87a74653237dfadbbc69df9d7eda (Data).
+2017-04-14 15:08:23,489 INFO  org.apache.flink.runtime.jobmanager.JobManager                - Using restart strategy NoRestartStrategy for a47a87a74653237dfadbbc69df9d7eda.
+2017-04-14 15:08:23,515 INFO  org.apache.flink.runtime.jobmanager.JobManager                - Running initialization on master for job Data (a47a87a74653237dfadbbc69df9d7eda).
+2017-04-14 15:08:23,516 INFO  org.apache.flink.runtime.jobmanager.JobManager                - Successfully ran initialization on master in 0 ms.
+2017-04-14 15:08:23,536 INFO  org.apache.flink.runtime.jobmanager.JobManager                - Scheduling job a47a87a74653237dfadbbc69df9d7eda (Data).
+2017-04-14 15:08:23,536 INFO  org.apache.flink.runtime.executiongraph.ExecutionGraph        - Job Data (a47a87a74653237dfadbbc69df9d7eda) switched from state CREATED to RUNNING.
+2017-04-14 15:08:23,538 INFO  org.apache.flink.runtime.executiongraph.ExecutionGraph        - Source: Socket Stream (1/1) (1ae5d4d7825d489d7cec2a749404a976) switched from CREATED to SCHEDULED.
+2017-04-14 15:08:23,553 INFO  org.apache.flink.runtime.executiongraph.ExecutionGraph        - Source: Socket Stream (1/1) (1ae5d4d7825d489d7cec2a749404a976) switched from SCHEDULED to DEPLOYING.
+2017-04-14 15:08:23,554 INFO  org.apache.flink.runtime.executiongraph.ExecutionGraph        - Deploying Source: Socket Stream (1/1) (attempt #0) to 127.0.0.1
+2017-04-14 15:08:23,566 INFO  org.apache.flink.runtime.executiongraph.ExecutionGraph        - Map -> Sink: Unnamed (1/4) (42fb031000fda6dc51c24802fcb1b598) switched from CREATED to SCHEDULED.
+2017-04-14 15:08:23,567 INFO  org.apache.flink.runtime.executiongraph.ExecutionGraph        - Map -> Sink: Unnamed (1/4) (42fb031000fda6dc51c24802fcb1b598) switched from SCHEDULED to DEPLOYING.
+2017-04-14 15:08:23,570 INFO  org.apache.flink.runtime.executiongraph.ExecutionGraph        - Deploying Map -> Sink: Unnamed (1/4) (attempt #0) to 127.0.0.1
+2017-04-14 15:08:23,576 INFO  org.apache.flink.runtime.executiongraph.ExecutionGraph        - Map -> Sink: Unnamed (2/4) (9ff2a61585bd31766e9cba71df42fc5b) switched from CREATED to SCHEDULED.
+2017-04-14 15:08:23,577 INFO  org.apache.flink.runtime.executiongraph.ExecutionGraph        - Map -> Sink: Unnamed (2/4) (9ff2a61585bd31766e9cba71df42fc5b) switched from SCHEDULED to DEPLOYING.
+2017-04-14 15:08:23,578 INFO  org.apache.flink.runtime.executiongraph.ExecutionGraph        - Deploying Map -> Sink: Unnamed (2/4) (attempt #0) to 127.0.0.1
+2017-04-14 15:08:23,579 INFO  org.apache.flink.runtime.executiongraph.ExecutionGraph        - Map -> Sink: Unnamed (3/4) (9377fc622c3b4848eaf642d2cd54e531) switched from CREATED to SCHEDULED.
+2017-04-14 15:08:23,580 INFO  org.apache.flink.runtime.executiongraph.ExecutionGraph        - Map -> Sink: Unnamed (3/4) (9377fc622c3b4848eaf642d2cd54e531) switched from SCHEDULED to DEPLOYING.
+2017-04-14 15:08:23,582 INFO  org.apache.flink.runtime.executiongraph.ExecutionGraph        - Deploying Map -> Sink: Unnamed (3/4) (attempt #0) to 127.0.0.1
+2017-04-14 15:08:23,583 INFO  org.apache.flink.runtime.executiongraph.ExecutionGraph        - Map -> Sink: Unnamed (4/4) (94b862b033f44c95852ecb8838af8836) switched from CREATED to SCHEDULED.
+2017-04-14 15:08:23,583 INFO  org.apache.flink.runtime.executiongraph.ExecutionGraph        - Map -> Sink: Unnamed (4/4) (94b862b033f44c95852ecb8838af8836) switched from SCHEDULED to DEPLOYING.
+2017-04-14 15:08:23,583 INFO  org.apache.flink.runtime.executiongraph.ExecutionGraph        - Deploying Map -> Sink: Unnamed (4/4) (attempt #0) to 127.0.0.1
+2017-04-14 15:08:23,623 INFO  org.apache.flink.runtime.taskmanager.TaskManager              - Received task Source: Socket Stream (1/1)
+2017-04-14 15:08:23,624 INFO  org.apache.flink.runtime.taskmanager.Task                     - Source: Socket Stream (1/1) (1ae5d4d7825d489d7cec2a749404a976) switched from CREATED to DEPLOYING.
+2017-04-14 15:08:23,630 INFO  org.apache.flink.core.fs.FileSystem                           - Created new CloseableRegistry org.apache.flink.core.fs.SafetyNetCloseableRegistry@cdb0aa for Source: Socket Stream (1/1)
+2017-04-14 15:08:23,630 INFO  org.apache.flink.runtime.taskmanager.Task                     - Loading JAR files for task Source: Socket Stream (1/1) (1ae5d4d7825d489d7cec2a749404a976) [DEPLOYING].
+2017-04-14 15:08:23,631 INFO  org.apache.flink.runtime.blob.BlobCache                       - Downloading c257ae3df6bda3396b6dbe414671386b24d2d0bc from localhost/127.0.0.1:53241
+2017-04-14 15:08:23,633 INFO  org.apache.flink.runtime.taskmanager.TaskManager              - Received task Map -> Sink: Unnamed (1/4)
+2017-04-14 15:08:23,634 INFO  org.apache.flink.runtime.taskmanager.Task                     - Map -> Sink: Unnamed (1/4) (42fb031000fda6dc51c24802fcb1b598) switched from CREATED to DEPLOYING.
+2017-04-14 15:08:23,634 INFO  org.apache.flink.core.fs.FileSystem                           - Created new CloseableRegistry org.apache.flink.core.fs.SafetyNetCloseableRegistry@6afe848f for Map -> Sink: Unnamed (1/4)
+2017-04-14 15:08:23,635 INFO  org.apache.flink.runtime.taskmanager.Task                     - Loading JAR files for task Map -> Sink: Unnamed (1/4) (42fb031000fda6dc51c24802fcb1b598) [DEPLOYING].
+2017-04-14 15:08:23,638 INFO  org.apache.flink.runtime.taskmanager.TaskManager              - Received task Map -> Sink: Unnamed (2/4)
+2017-04-14 15:08:23,653 INFO  org.apache.flink.runtime.taskmanager.TaskManager              - Received task Map -> Sink: Unnamed (3/4)
+2017-04-14 15:08:23,678 INFO  org.apache.flink.runtime.taskmanager.TaskManager              - Received task Map -> Sink: Unnamed (4/4)
+2017-04-14 15:08:23,692 INFO  org.apache.flink.runtime.taskmanager.Task                     - Map -> Sink: Unnamed (2/4) (9ff2a61585bd31766e9cba71df42fc5b) switched from CREATED to DEPLOYING.
+2017-04-14 15:08:23,693 INFO  org.apache.flink.core.fs.FileSystem                           - Created new CloseableRegistry org.apache.flink.core.fs.SafetyNetCloseableRegistry@78304a61 for Map -> Sink: Unnamed (2/4)
+2017-04-14 15:08:23,693 INFO  org.apache.flink.runtime.taskmanager.Task                     - Loading JAR files for task Map -> Sink: Unnamed (2/4) (9ff2a61585bd31766e9cba71df42fc5b) [DEPLOYING].
+2017-04-14 15:08:23,694 INFO  org.apache.flink.runtime.taskmanager.Task                     - Map -> Sink: Unnamed (4/4) (94b862b033f44c95852ecb8838af8836) switched from CREATED to DEPLOYING.
+2017-04-14 15:08:23,695 INFO  org.apache.flink.core.fs.FileSystem                           - Created new CloseableRegistry org.apache.flink.core.fs.SafetyNetCloseableRegistry@1e2c3886 for Map -> Sink: Unnamed (4/4)
+2017-04-14 15:08:23,695 INFO  org.apache.flink.runtime.taskmanager.Task                     - Loading JAR files for task Map -> Sink: Unnamed (4/4) (94b862b033f44c95852ecb8838af8836) [DEPLOYING].
+2017-04-14 15:08:23,692 INFO  org.apache.flink.runtime.taskmanager.Task                     - Map -> Sink: Unnamed (3/4) (9377fc622c3b4848eaf642d2cd54e531) switched from CREATED to DEPLOYING.
+2017-04-14 15:08:23,697 INFO  org.apache.flink.core.fs.FileSystem                           - Created new CloseableRegistry org.apache.flink.core.fs.SafetyNetCloseableRegistry@2cf47920 for Map -> Sink: Unnamed (3/4)
+2017-04-14 15:08:23,698 INFO  org.apache.flink.runtime.taskmanager.Task                     - Loading JAR files for task Map -> Sink: Unnamed (3/4) (9377fc622c3b4848eaf642d2cd54e531) [DEPLOYING].
+2017-04-14 15:08:23,755 INFO  org.apache.flink.runtime.taskmanager.Task                     - Registering task at network: Source: Socket Stream (1/1) (1ae5d4d7825d489d7cec2a749404a976) [DEPLOYING].
+2017-04-14 15:08:23,760 INFO  org.apache.flink.runtime.taskmanager.Task                     - Registering task at network: Map -> Sink: Unnamed (3/4) (9377fc622c3b4848eaf642d2cd54e531) [DEPLOYING].
+2017-04-14 15:08:23,761 INFO  org.apache.flink.runtime.taskmanager.Task                     - Registering task at network: Map -> Sink: Unnamed (4/4) (94b862b033f44c95852ecb8838af8836) [DEPLOYING].
+2017-04-14 15:08:23,761 INFO  org.apache.flink.runtime.taskmanager.Task                     - Registering task at network: Map -> Sink: Unnamed (1/4) (42fb031000fda6dc51c24802fcb1b598) [DEPLOYING].
+2017-04-14 15:08:23,761 INFO  org.apache.flink.runtime.taskmanager.Task                     - Map -> Sink: Unnamed (3/4) (9377fc622c3b4848eaf642d2cd54e531) switched from DEPLOYING to RUNNING.
+2017-04-14 15:08:23,761 INFO  org.apache.flink.runtime.taskmanager.Task                     - Registering task at network: Map -> Sink: Unnamed (2/4) (9ff2a61585bd31766e9cba71df42fc5b) [DEPLOYING].
+2017-04-14 15:08:23,761 INFO  org.apache.flink.runtime.taskmanager.Task                     - Map -> Sink: Unnamed (1/4) (42fb031000fda6dc51c24802fcb1b598) switched from DEPLOYING to RUNNING.
+2017-04-14 15:08:23,761 INFO  org.apache.flink.runtime.taskmanager.Task                     - Source: Socket Stream (1/1) (1ae5d4d7825d489d7cec2a749404a976) switched from DEPLOYING to RUNNING.
+2017-04-14 15:08:23,761 INFO  org.apache.flink.runtime.taskmanager.Task                     - Map -> Sink: Unnamed (2/4) (9ff2a61585bd31766e9cba71df42fc5b) switched from DEPLOYING to RUNNING.
+2017-04-14 15:08:23,761 INFO  org.apache.flink.runtime.taskmanager.Task                     - Map -> Sink: Unnamed (4/4) (94b862b033f44c95852ecb8838af8836) switched from DEPLOYING to RUNNING.
+2017-04-14 15:08:23,764 INFO  org.apache.flink.runtime.executiongraph.ExecutionGraph        - Source: Socket Stream (1/1) (1ae5d4d7825d489d7cec2a749404a976) switched from DEPLOYING to RUNNING.
+2017-04-14 15:08:23,765 INFO  org.apache.flink.runtime.executiongraph.ExecutionGraph        - Map -> Sink: Unnamed (3/4) (9377fc622c3b4848eaf642d2cd54e531) switched from DEPLOYING to RUNNING.
+2017-04-14 15:08:23,766 WARN  org.apache.flink.streaming.runtime.tasks.StreamTask           - No state backend has been specified, using default state backend (Memory / JobManager)
+2017-04-14 15:08:23,766 INFO  org.apache.flink.streaming.runtime.tasks.StreamTask           - State backend is set to heap memory (checkpoint to jobmanager)
+2017-04-14 15:08:23,766 INFO  org.apache.flink.runtime.executiongraph.ExecutionGraph        - Map -> Sink: Unnamed (2/4) (9ff2a61585bd31766e9cba71df42fc5b) switched from DEPLOYING to RUNNING.
+2017-04-14 15:08:23,772 WARN  org.apache.flink.streaming.runtime.tasks.StreamTask           - No state backend has been specified, using default state backend (Memory / JobManager)
+2017-04-14 15:08:23,772 INFO  org.apache.flink.streaming.runtime.tasks.StreamTask           - State backend is set to heap memory (checkpoint to jobmanager)
+2017-04-14 15:08:23,765 INFO  org.apache.flink.runtime.executiongraph.ExecutionGraph        - Map -> Sink: Unnamed (1/4) (42fb031000fda6dc51c24802fcb1b598) switched from DEPLOYING to RUNNING.
+2017-04-14 15:08:23,765 INFO  org.apache.flink.runtime.executiongraph.ExecutionGraph        - Map -> Sink: Unnamed (4/4) (94b862b033f44c95852ecb8838af8836) switched from DEPLOYING to RUNNING.
+2017-04-14 15:08:23,770 WARN  org.apache.flink.streaming.runtime.tasks.StreamTask           - No state backend has been specified, using default state backend (Memory / JobManager)
+2017-04-14 15:08:23,777 INFO  org.apache.flink.streaming.runtime.tasks.StreamTask           - State backend is set to heap memory (checkpoint to jobmanager)
+2017-04-14 15:08:23,766 WARN  org.apache.flink.streaming.runtime.tasks.StreamTask           - No state backend has been specified, using default state backend (Memory / JobManager)
+2017-04-14 15:08:23,777 INFO  org.apache.flink.streaming.runtime.tasks.StreamTask           - State backend is set to heap memory (checkpoint to jobmanager)
+2017-04-14 15:08:23,770 WARN  org.apache.flink.streaming.runtime.tasks.StreamTask           - No state backend has been specified, using default state backend (Memory / JobManager)
+2017-04-14 15:08:23,779 INFO  org.apache.flink.streaming.runtime.tasks.StreamTask           - State backend is set to heap memory (checkpoint to jobmanager)
+2017-04-14 15:08:24,187 INFO  org.apache.flink.streaming.api.functions.source.SocketTextStreamFunction  - Connecting to server socket localhost:9000
+2017-04-14 15:08:26,265 INFO  org.apache.flink.runtime.taskmanager.Task                     - Source: Socket Stream (1/1) (1ae5d4d7825d489d7cec2a749404a976) switched from RUNNING to FINISHED.
+2017-04-14 15:08:26,265 INFO  org.apache.flink.runtime.taskmanager.Task                     - Freeing task resources for Source: Socket Stream (1/1) (1ae5d4d7825d489d7cec2a749404a976).
+2017-04-14 15:08:26,265 INFO  org.apache.flink.core.fs.FileSystem                           - Ensuring all FileSystem streams are closed for Source: Socket Stream (1/1)
+2017-04-14 15:08:26,266 INFO  org.apache.flink.runtime.taskmanager.Task                     - Map -> Sink: Unnamed (3/4) (9377fc622c3b4848eaf642d2cd54e531) switched from RUNNING to FINISHED.
+2017-04-14 15:08:26,266 INFO  org.apache.flink.runtime.taskmanager.Task                     - Freeing task resources for Map -> Sink: Unnamed (3/4) (9377fc622c3b4848eaf642d2cd54e531).
+2017-04-14 15:08:26,266 INFO  org.apache.flink.core.fs.FileSystem                           - Ensuring all FileSystem streams are closed for Map -> Sink: Unnamed (3/4)
+2017-04-14 15:08:26,266 INFO  org.apache.flink.runtime.taskmanager.Task                     - Map -> Sink: Unnamed (2/4) (9ff2a61585bd31766e9cba71df42fc5b) switched from RUNNING to FINISHED.
+2017-04-14 15:08:26,267 INFO  org.apache.flink.runtime.taskmanager.Task                     - Freeing task resources for Map -> Sink: Unnamed (2/4) (9ff2a61585bd31766e9cba71df42fc5b).
+2017-04-14 15:08:26,267 INFO  org.apache.flink.core.fs.FileSystem                           - Ensuring all FileSystem streams are closed for Map -> Sink: Unnamed (2/4)
+2017-04-14 15:08:26,268 INFO  org.apache.flink.runtime.taskmanager.Task                     - Map -> Sink: Unnamed (1/4) (42fb031000fda6dc51c24802fcb1b598) switched from RUNNING to FINISHED.
+2017-04-14 15:08:26,268 INFO  org.apache.flink.runtime.taskmanager.Task                     - Freeing task resources for Map -> Sink: Unnamed (1/4) (42fb031000fda6dc51c24802fcb1b598).
+2017-04-14 15:08:26,268 INFO  org.apache.flink.core.fs.FileSystem                           - Ensuring all FileSystem streams are closed for Map -> Sink: Unnamed (1/4)
+2017-04-14 15:08:26,268 INFO  org.apache.flink.runtime.taskmanager.TaskManager              - Un-registering task and sending final execution state FINISHED to JobManager for task Source: Socket Stream (1ae5d4d7825d489d7cec2a749404a976)
+2017-04-14 15:08:26,276 INFO  org.apache.flink.runtime.taskmanager.TaskManager              - Un-registering task and sending final execution state FINISHED to JobManager for task Map -> Sink: Unnamed (9ff2a61585bd31766e9cba71df42fc5b)
+2017-04-14 15:08:26,277 INFO  org.apache.flink.runtime.taskmanager.Task                     - Map -> Sink: Unnamed (4/4) (94b862b033f44c95852ecb8838af8836) switched from RUNNING to FINISHED.
+2017-04-14 15:08:26,277 INFO  org.apache.flink.runtime.taskmanager.Task                     - Freeing task resources for Map -> Sink: Unnamed (4/4) (94b862b033f44c95852ecb8838af8836).
+2017-04-14 15:08:26,277 INFO  org.apache.flink.runtime.taskmanager.TaskManager              - Un-registering task and sending final execution state FINISHED to JobManager for task Map -> Sink: Unnamed (9377fc622c3b4848eaf642d2cd54e531)
+2017-04-14 15:08:26,278 INFO  org.apache.flink.core.fs.FileSystem                           - Ensuring all FileSystem streams are closed for Map -> Sink: Unnamed (4/4)
+2017-04-14 15:08:26,279 INFO  org.apache.flink.runtime.taskmanager.TaskManager              - Un-registering task and sending final execution state FINISHED to JobManager for task Map -> Sink: Unnamed (42fb031000fda6dc51c24802fcb1b598)
+2017-04-14 15:08:26,280 INFO  org.apache.flink.runtime.taskmanager.TaskManager              - Un-registering task and sending final execution state FINISHED to JobManager for task Map -> Sink: Unnamed (94b862b033f44c95852ecb8838af8836)
+2017-04-14 15:08:26,283 INFO  org.apache.flink.runtime.executiongraph.ExecutionGraph        - Map -> Sink: Unnamed (3/4) (9377fc622c3b4848eaf642d2cd54e531) switched from RUNNING to FINISHED.
+2017-04-14 15:08:26,284 INFO  org.apache.flink.runtime.executiongraph.ExecutionGraph        - Map -> Sink: Unnamed (1/4) (42fb031000fda6dc51c24802fcb1b598) switched from RUNNING to FINISHED.
+2017-04-14 15:08:26,285 INFO  org.apache.flink.runtime.executiongraph.ExecutionGraph        - Map -> Sink: Unnamed (4/4) (94b862b033f44c95852ecb8838af8836) switched from RUNNING to FINISHED.
+2017-04-14 15:08:26,285 INFO  org.apache.flink.runtime.executiongraph.ExecutionGraph        - Map -> Sink: Unnamed (2/4) (9ff2a61585bd31766e9cba71df42fc5b) switched from RUNNING to FINISHED.
+2017-04-14 15:08:26,288 INFO  org.apache.flink.runtime.executiongraph.ExecutionGraph        - Source: Socket Stream (1/1) (1ae5d4d7825d489d7cec2a749404a976) switched from RUNNING to FINISHED.
+2017-04-14 15:08:26,288 INFO  org.apache.flink.runtime.executiongraph.ExecutionGraph        - Job Data (a47a87a74653237dfadbbc69df9d7eda) switched from state RUNNING to FINISHED.
+2017-04-14 15:08:26,289 INFO  org.apache.flink.runtime.checkpoint.CheckpointCoordinator     - Stopping checkpoint coordinator for job a47a87a74653237dfadbbc69df9d7eda
+2017-04-14 15:08:26,289 INFO  org.apache.flink.runtime.checkpoint.StandaloneCompletedCheckpointStore  - Shutting down
+2017-04-14 15:30:32,052 INFO  org.apache.flink.runtime.jobmanager.JobManager                - RECEIVED SIGNAL 2: SIGINT. Shutting down as requested.
+2017-04-14 15:30:32,052 INFO  org.apache.flink.runtime.webmonitor.WebRuntimeMonitor         - Removing web dashboard root cache directory C:\Users\Ritz\AppData\Local\Temp\flink-web-cef4d062-2f01-4d20-922c-89e50d467945
+2017-04-14 15:30:32,052 INFO  org.apache.flink.runtime.blob.BlobCache                       - Shutting down BlobCache
+2017-04-14 15:30:32,052 INFO  org.apache.flink.runtime.webmonitor.WebRuntimeMonitor         - Removing web dashboard jar upload directory C:\Users\Ritz\AppData\Local\Temp\flink-web-5e755bfd-eca4-424b-8975-2c76ca293d0d
+2017-04-14 15:30:32,052 INFO  org.apache.flink.runtime.io.disk.iomanager.IOManager          - I/O manager removed spill file directory C:\Users\Ritz\AppData\Local\Temp\flink-io-d33c5e4c-8ca8-4ddf-86d8-440567c48525
+2017-04-14 15:30:32,052 INFO  org.apache.flink.runtime.blob.BlobServer                      - Stopped BLOB server at 0.0.0.0:53241
