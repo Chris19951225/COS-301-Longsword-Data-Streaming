@@ -18,36 +18,52 @@ package org.apache.flink;
  * limitations under the License.
  */
 
+// Flink imports
 import org.apache.flink.api.common.functions.MapFunction;
 import org.apache.flink.streaming.api.datastream.DataStream;
 import org.apache.flink.streaming.api.environment.StreamExecutionEnvironment;
 import org.apache.flink.streaming.api.functions.sink.SocketClientSink;
 import org.apache.flink.streaming.util.serialization.SimpleStringSchema;
-import org.apache.sling.commons.json.JSONObject;
+import org.apache.log4j.BasicConfigurator;
 
-/**
- * Implements a streaming windowed version of the "WordCount" program.
- *
- * This program connects to a server socket and reads strings from the socket.
- * The easiest way to try this out is to open a text server (at port 12345)
- * using the <i>netcat</i> tool via
- * <pre>
- * nc -l 12345
- * </pre>
- * and run this example with the hostname and the port as arguments.
- */
-@SuppressWarnings("serial")
+// Gargoyle imports
+import com.gargoylesoftware.htmlunit.WebClient;
+import com.gargoylesoftware.htmlunit.html.HtmlForm;
+import com.gargoylesoftware.htmlunit.html.HtmlPage;
+import com.gargoylesoftware.htmlunit.html.HtmlPasswordInput;
+import com.gargoylesoftware.htmlunit.html.HtmlSubmitInput;
+import com.gargoylesoftware.htmlunit.html.HtmlTextInput;
+import com.gargoylesoftware.htmlunit.WebResponse;
+import com.gargoylesoftware.htmlunit.WebRequest;
+
+// Other imports
+import java.net.URL;
+import org.json.JSONArray;
+
+
 public class Data
 {
     public static void main(String[] args) throws Exception
     {
+        // Logging in to Aruba
+        BasicConfigurator.configure();
+        WebClient webClient = new WebClient();
+        webClient.getOptions().setUseInsecureSSL(true);  //bypass certificate validation
+        HtmlPage page1 = webClient.getPage("https://137.215.6.208");
+        HtmlForm form = page1.getHtmlElementById("login-form");
+        HtmlSubmitInput submitButton = form.getInputByValue("Log In");
+        HtmlTextInput textFieldEmail = form.getInputByName("j_username");
+        textFieldEmail.setValueAttribute("admin");
+        HtmlPasswordInput textFieldPass = form.getInputByName("j_password");
+        textFieldPass.setValueAttribute("Aruba123!");
+        HtmlPage dashboard = submitButton.click();
 
         // The host and the port to connect to
         final String hostname = "localhost";
         final int port = 9000;
         final int outputPort = 9004;
 
-        // Get the execution environment
+        // Get the Flink execution environment
         final StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
 
         // Sets the parallelism for operations executed through this environment. Setting a parallelism of x here will cause all operators (such as join, map, reduce) to run with x parallel instances.
@@ -61,14 +77,37 @@ public class Data
         .map(new MapFunction<String, String>() {
             public String map(String value)
             {
-                JSONObject obj = getLocation();
-                String str = obj.toString();
-                return ("MAC-Address: " + value + " with location: " +str + "\n");
+                // Creating request to query aruba for location
+                WebResponse response = null;
+                try
+                {
+                    URL url= new URL("https://137.215.6.208/api/v1/location?sta_eth_mac=" + value);
+                    WebRequest locationReq = new WebRequest(url);
+                    response =  webClient.loadWebResponse(locationReq);
+                }
+                catch(Exception e)
+                {
+                    System.out.println("An exception occurred while creating a URL request object.");
+                }
+
+                // Sanitise the data received from Aruba
+                org.json.JSONObject obj = null;
+                if(response != null)
+                {
+                    obj = filterArubaReturn(response.getContentAsString());
+                }
+                else
+                {
+                    System.out.println("Error. No response received.");
+                }
+
+                // Return the sanitised JSON data as a string that can be parsed upon being received
+                return (obj.toString() + "\n");
             }
         });
 
 
-        // Add data sink to return sanitis  ed data
+        // Add data sink to return sanitised data through a port
        locationRequests.addSink(new SocketClientSink<String>("localhost",outputPort, new SimpleStringSchema(),-1));
 
        // Triggers the program execution. The environment will execute all parts of the program that have resulted in a "sink" operation.
@@ -77,30 +116,77 @@ public class Data
 
     // ------------------------------------------------------------------------
 
-     /**
-     * Data type
-     */
+    public static org.json.JSONObject filterArubaReturn(String json)
+    {
+        //Just a tester json object, real one should be passed as the string parameter
 
-    public static JSONObject getLocation(){
+        org.json.JSONObject unclean = null;
+        org.json.JSONObject cleaned = null;
 
-        JSONObject obj = null;
+        try
+        {
+            unclean = new org.json.JSONObject(json);
 
-        try {
-            obj = new JSONObject("{\n" +
-                    "  \"Location\": {\n" +
-                    "    \"Latitude\" : \"-25.755988\",\n" +
-                    "    \"Longitude\": \"28.233234\",\n" +
-                    "    \"Altitude\" :  \"10m\"\n" +
-                    "  }\n" +
-                    "}");
+            //the bellow can later be removed
+            String addr = null;
+            double sta_location_x = 0, sta_location_y = 0;
+            int error_level = 0;
+            boolean associated = false;
+            String campus_id = null, building_id = null, floor_id = null, hashed_sta_eth_mac = null;
+            String loc_algorithm = null;
+            double longitude = 0, latitude = 0, altitude = 0;
+            String unit = null;
 
-        } catch (Exception e) {
+            JSONArray inner = unclean.getJSONArray("Location_result");
+            org.json.JSONObject pos = inner.getJSONObject(0);
+            org.json.JSONObject location = pos.getJSONObject("msg");
+            org.json.JSONObject address = location.getJSONObject("sta_eth_mac");
 
-            e.printStackTrace();
+
+            //Things integration doesn't want can be removed later
+            addr = address.getString("addr");
+            sta_location_x = location.getDouble("sta_location_x");
+            sta_location_y = location.getDouble("sta_location_y");
+            error_level = location.getInt("error_level");
+            associated = location.getBoolean("associated");
+            campus_id = location.getString("campus_id");
+            floor_id = location.getString("floor_id");
+            hashed_sta_eth_mac = location.getString("hashed_sta_eth_mac");
+            loc_algorithm = location.getString("loc_algorithm");
+            longitude = location.getDouble("longitude");
+            latitude =location.getDouble("latitude");
+            altitude = location.getDouble("altitude");
+            unit = location.getString("unit");
+
+            String clean = "";
+            clean += "{\n   \"Location\": {\n";
+            clean += "      \"addr\": \"" + addr + "\",\n";
+            clean += "      \"sta_location_x\": " + sta_location_x + ",\n";
+            clean += "      \"sta_location_y\": " + sta_location_y + ",\n";
+            clean += "      \"error_level\": " + error_level + ",\n";
+            clean += "      \"associated\": " + associated + ",\n";
+            clean += "      \"campus_id\": \"" + campus_id + "\",\n";
+            clean += "      \"building_id\": \"" + building_id + "\",\n";
+            clean += "      \"floor_id\": \"" + floor_id + "\",\n";
+            clean += "      \"hashed_sta_eth_mac\": \"" + hashed_sta_eth_mac + "\",\n";
+            clean += "      \"loc_algorithm\": \"" + loc_algorithm + "\",\n";
+            clean += "      \"longitude\": " + longitude + ",\n";
+            clean += "      \"latitude\": " + latitude + ",\n";
+            clean += "      \"altitude\": " + altitude + ",\n";
+            clean += "      \"unit\": \"" + unit + "\"\n";
+            clean += "  }\n}";
+
+            System.out.println(clean);
+
+            cleaned = new org.json.JSONObject(clean);
+        }
+        catch(Exception e)
+        {
+            System.out.println("Exception occurred while filtering JSON object.");
         }
 
-
-        return obj;
-
+        return cleaned;
     }
 }
+
+
