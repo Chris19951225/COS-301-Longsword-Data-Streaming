@@ -34,7 +34,12 @@ public class ClientLoginWeb {
        //Creating request to query aruba for location
       URL url= new URL("https://137.215.6.208/api/v1/location?sta_eth_mac=48:9D:24:B9:41:CB");
       WebRequest locationReq = new WebRequest(url);
-      WebResponse page2 =  webClient.loadWebResponse(locationReq); 
-      System.out.println(page2);
+      WebResponse response =  webClient.loadWebResponse(locationReq); 
+       
+      System.out.println("=========================================================" );
+      System.out.println( response.getContentAsString());
+      System.out.println("=========================================================" );
+      webClient.close();  
+      
     }
 }
