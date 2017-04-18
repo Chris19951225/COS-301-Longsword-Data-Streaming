@@ -10,6 +10,7 @@ import com.gargoylesoftware.htmlunit.WebResponse;
 import com.gargoylesoftware.htmlunit.WebRequest;
 import java.net.URL;
 import org.apache.log4j.BasicConfigurator;
+import javax.xml.ws.Response;
 
 public class ClientLoginWeb {
 
