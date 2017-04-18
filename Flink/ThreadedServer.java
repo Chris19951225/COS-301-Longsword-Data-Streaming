@@ -1,3 +1,7 @@
+/*
+This program is to check that the streaming functinality is working as needed to process requests as fast as possible.
+*/
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
