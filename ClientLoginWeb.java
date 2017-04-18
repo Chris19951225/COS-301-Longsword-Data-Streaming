@@ -20,9 +20,10 @@ public class ClientLoginWeb {
       
       BasicConfigurator.configure();
       WebClient webClient = new WebClient();
+      webClient.getOptions().setUseInsecureSSL(true);  //bypass certificate validation
       HtmlPage page1 = webClient.getPage("https://137.215.6.208");
       HtmlForm form = page1.getHtmlElementById("login-form");
-      
+ 
       HtmlSubmitInput submitButton = form.getInputByValue("Log In");
       HtmlTextInput textFieldEmail = form.getInputByName("j_username");
       textFieldEmail.setValueAttribute("admin");
