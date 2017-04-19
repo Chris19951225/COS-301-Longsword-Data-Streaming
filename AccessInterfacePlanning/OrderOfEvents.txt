@@ -1,0 +1,7 @@
+These are the order of events that this Access Interface rough draft is based upon:
+
+1. Arguments are read through a textfile - for now.
+2. Threaded server is started
+4. TestServerRequester is executed and address read from text file is passed as argument To Data.
+5. Data receives the address, handles FLink and Aruba getLocation and responds to ThreadedServer.
+6.ThreadedServer then takes these results and sends them back to TestServerRequester.
