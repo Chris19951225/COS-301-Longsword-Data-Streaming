@@ -1,5 +1,16 @@
 package org.apache.flink;
 
+// Other imports
+import java.net.URL;
+import org.apache.http.client.CredentialsProvider;
+import org.apache.http.NoHttpResponseException;
+import org.apache.http.entity.mime.content.ContentBody;
+import net.sourceforge.htmlunit.corejs.javascript.ContextAction;
+import org.w3c.css.sac.ErrorHandler;
+import org.w3c.dom.ElementTraversal;
+import org.w3c.*;
+import org.apache.flink.api.common.functions.MapFunction;
+
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -18,35 +29,32 @@ package org.apache.flink;
  * limitations under the License.
  */
 
-// Flink imports
-import org.apache.flink.api.common.functions.MapFunction;
 import org.apache.flink.streaming.api.datastream.DataStream;
 import org.apache.flink.streaming.api.environment.StreamExecutionEnvironment;
 import org.apache.flink.streaming.api.functions.sink.SocketClientSink;
 import org.apache.flink.streaming.util.serialization.SimpleStringSchema;
 import org.apache.log4j.BasicConfigurator;
+import org.json.JSONArray;
 
 // Gargoyle imports
 import com.gargoylesoftware.htmlunit.WebClient;
+import com.gargoylesoftware.htmlunit.WebRequest;
+import com.gargoylesoftware.htmlunit.WebResponse;
 import com.gargoylesoftware.htmlunit.html.HtmlForm;
 import com.gargoylesoftware.htmlunit.html.HtmlPage;
 import com.gargoylesoftware.htmlunit.html.HtmlPasswordInput;
 import com.gargoylesoftware.htmlunit.html.HtmlSubmitInput;
 import com.gargoylesoftware.htmlunit.html.HtmlTextInput;
-import com.gargoylesoftware.htmlunit.WebResponse;
-import com.gargoylesoftware.htmlunit.WebRequest;
 
-// Other imports
-import java.net.URL;
-import org.json.JSONArray;
-
-
+@SuppressWarnings("unused")
 public class Data
 {
-    public static void main(String[] args) throws Exception
+    @SuppressWarnings("resource")
+	public static void main(String[] args) throws Exception
     {
         // Logging in to Aruba
         BasicConfigurator.configure();
+      
         WebClient webClient = new WebClient();
         webClient.getOptions().setUseInsecureSSL(true);  //bypass certificate validation
         HtmlPage page1 = webClient.getPage("https://137.215.6.208");
@@ -72,18 +80,22 @@ public class Data
         // Create a data stream to receive text via a socket
         DataStream<String> text = env.socketTextStream(hostname, port, "\n");
 
-        DataStream<String> locationRequests = text
-
-        .map(new MapFunction<String, String>() {
+        DataStream<String> locationRequests = text.map(new MapFunction<String, String>() {
             public String map(String value)
             {
                 // Creating request to query aruba for location
                 WebResponse response = null;
+                URL url=null;
+                WebRequest locationReq =null;
+                
                 try
                 {
-                    URL url= new URL("https://137.215.6.208/api/v1/location?sta_eth_mac=" + value);
-                    WebRequest locationReq = new WebRequest(url);
-                    response =  webClient.loadWebResponse(locationReq);
+                	if(url==null)
+                		url= new URL("https://137.215.6.208/api/v1/location?sta_eth_mac=" + value);
+                    if(locationReq==null)
+                    	locationReq = new WebRequest(url);
+                    if(response==null)
+                    	response =  webClient.loadWebResponse(locationReq);
                 }
                 catch(Exception e)
                 {
@@ -112,7 +124,10 @@ public class Data
 
        // Triggers the program execution. The environment will execute all parts of the program that have resulted in a "sink" operation.
        env.execute("Data");
+       webClient.close();
+       
     }
+
 
     // ------------------------------------------------------------------------
 
@@ -188,5 +203,3 @@ public class Data
         return cleaned;
     }
 }
-
-
