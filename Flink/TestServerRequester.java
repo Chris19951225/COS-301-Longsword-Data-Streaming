@@ -40,9 +40,9 @@ public class TestServerRequester
 
         long startTime = System.nanoTime();
 
-        for(int i = 0; i < 25000; i++)
+        for(int i = 0; i < 1; i++)
         {
-            pw.println(i);
+            pw.println("48:5A:3F:79:A3:D1");
         }
 
         long endTime = System.nanoTime();
@@ -54,4 +54,3 @@ public class TestServerRequester
         socket.close();
     }
 }
-
