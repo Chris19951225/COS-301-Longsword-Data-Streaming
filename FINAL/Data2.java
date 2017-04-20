@@ -84,9 +84,6 @@ public class Data2 {
             floor_id = location.getString("floor_id");
             hashed_sta_eth_mac = location.getString("hashed_sta_eth_mac");
             loc_algorithm = location.getString("loc_algorithm");
-            longitude = location.getDouble("longitude");
-            latitude =location.getDouble("latitude");
-            altitude = location.getDouble("altitude");
             unit = location.getString("unit");
 
             String clean = "";
