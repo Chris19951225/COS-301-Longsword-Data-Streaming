@@ -98,9 +98,6 @@ public class Data2 {
             clean += "      \"floor_id\": \"" + floor_id + "\",\n";
             clean += "      \"hashed_sta_eth_mac\": \"" + hashed_sta_eth_mac + "\",\n";
             clean += "      \"loc_algorithm\": \"" + loc_algorithm + "\",\n";
-            clean += "      \"longitude\": " + longitude + ",\n";
-            clean += "      \"latitude\": " + latitude + ",\n";
-            clean += "      \"altitude\": " + altitude + ",\n";
             clean += "      \"unit\": \"" + unit + "\"\n";
             clean += "  }\n}";
 
