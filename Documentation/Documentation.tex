@@ -1,0 +1,116 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks,
+    citecolor=black,
+    filecolor=black,
+    linkcolor=black,
+    urlcolor=black
+}
+
+ \geometry{
+ a4paper,
+ left=30mm,
+ right=30mm,
+ top=30mm,
+ }
+
+\graphicspath{ {Images/} }
+
+%----------------------------------------------------------------------------------------
+%	TITLE PAGE
+%----------------------------------------------------------------------------------------
+
+\newcommand*{\titleGP}{\begingroup
+		\begin{figure}[t]
+			\centering
+			\includegraphics[width=350px]{UP_Logo.PNG}
+		\end{figure}
+\centering 
+\vspace*{\baselineskip}
+
+\rule{\textwidth}{1.6pt}\vspace*{-\baselineskip}\vspace*{2pt}
+\rule{\textwidth}{0.4pt}\\[\baselineskip]
+
+{\LARGE NavUP\\ [0.3\baselineskip] Longsword Data Implementation } \\ [0.2\baselineskip]
+\rule{\textwidth}{0.4pt}\vspace*{-\baselineskip}\vspace{3.2pt}
+\rule{\textwidth}{1.6pt}\\[\baselineskip] %
+
+% \scshape %
+% A concise specification on the functional requirements  \\
+% and use cases of NavUP \\[\baselineskip]
+
+% \vspace*{2\baselineskip}
+
+Compiled By \\[\baselineskip]
+{\Large Lucian Sargeant - u15225560 \\ Ritesh Doolabh - u15075754 \\ Peter Boxall -  u14056136 \\ Claude Greeff - u13153740\\ Harris Leshaba - u15312144 \\ Hristian Vitrychenko - u15006442\par}
+
+\bigskip
+\bigskip
+
+ 	GitHub Repository:  
+ 	\href{https://github.com/Chris19951225/COS-301-Longsword-Data-Streaming}{COS 301 Team Longsword Data GitHub Repository(Phase 3)}
+
+
+
+
+ 
+
+\vfill
+
+
+{\scshape 2017} \\[0.3\baselineskip]
+{\large TEAM LONGSWORD (DATA)}\par
+
+\endgroup}
+
+\begin{document}
+
+\titleGP
+\newpage
+\tableofcontents
+
+\newpage
+\section{Introduction}
+The implementation of the Data module involves data streaming as its prime objective. This is to ensure that data is transmitted between devices at a rate that will not bottleneck the application as well as being able to handle a large amount of requests concurrently. 
+
+\subsection{Technology Choices}
+To ensure that our objectives were met, two important technology choices are Flink and Aruba. Flink is a data streaming service by Apache that provides data streaming to process multiple requests concurrently. Flink is optimized for cyclic or iterative processes by using iterative transformations on collections. This is achieved by an optimization of join algorithms, operator chaining and reusing of partitioning and sorting. However, Flink is also a strong tool for batch processing which was used to test the speed of the system. Flink streaming allows the processing of data streams as true streams, i.e., data elements are immediately "pipelined" though a streaming program as soon as they arrive. This allows to perform flexible window operations on streams. It is even capable of handling late data in streams by the use of watermarks. Furthermore Flink provides a very strong compatibility mode which makes it possible to use other software in conjunction with it, for example Kafka. 
+\begin{flushleft}
+The second technology choice is Aruba. This is a system implemented by the University Of Pretoria that uses the WiFi access point to allow digital devices to be located by the use of their MAC Addresses. Flink primarily communicates with the interface sending the MAC Address and queries the Aruba server to retrieve the location of the device and returns it to the calling program. 
+\end{flushleft}
+\section{Running The Program}
+The entirety of the submitted demo program has three running modes. These are namely:
+\begin{itemize}
+\item Flink only - to demonstrate streaming capabilities.
+\item Aruba only - to demonstrate Aruba communication, requesting and receiving of location data.
+\item Live requesting - to demonstrate the real time requests and responses from using Aruba and Flink.
+\end{itemize} 
+
+\subsection{Flink Only}
+\begin{enumerate}
+\item Navigate to flink-1.2.0/bin
+\item Open a command terminal and run start-local.bat/.sh
+\item Run TestServerRequester with arguments [false]
+\item Run TestServerReceiver with arguments [false false]
+\item Upload Data.jar to flink by running ./bin/flink run ./examples/Data.jar
+\end{enumerate}
+\subsection{Aruba Only}
+\begin{enumerate}
+\item Navigate to flink-1.2.0/bin
+\item Open a command terminal and run start-local.bat/.sh
+\item Run TestServerRequester with arguments [true]
+\item Run TestServerReceiver with arguments [true false]
+\item Upload Data.jar to flink by running ./bin/flink run ./examples/Data.jar
+\end{enumerate}
+\subsection{Live Requesting}
+\begin{enumerate}
+\item Start a netcat terminal on port 9000 with the command: nc -l -p 9000
+\item Start TestServerReceiver with arguments [true true]
+\item Upload Data.jar to flink by running ./bin/flink run ./examples/Data.jar
+\item Enter any MAC Address into netcat (output will be displayed in TestServerReceiver)
+\end{enumerate}
+\end{document}
