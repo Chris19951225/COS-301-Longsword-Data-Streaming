@@ -1,5 +1,6 @@
 [![Stories in Ready](https://badge.waffle.io/Chris19951225/COS-301-Longsword-Data-Streaming.svg?label=ready&title=Ready)](http://waffle.io/Chris19951225/COS-301-Longsword-Data-Streaming)
-[![Stories in Done](https://badge.waffle.io/Chris19951225/COS-301-Longsword-Data-Streaming.svg?label=done&title=Done)](http://waffle.io/Chris19951225/COS-301-Longsword-Data-Streaming)
+[![Stories in In Progress](https://badge.waffle.io/Chris19951225/COS-301-Longsword-Data-Streaming.svg?'label=In%20Progress&title=In%20Progress')](http://waffle.io/Chris19951225/COS-301-Longsword-Data-Streaming)
+[![Stories in Done](https://badge.waffle.io/Chris19951225/COS-301-Longsword-Data-Streaming.svg?label=Done&title=Done)](http://waffle.io/Chris19951225/COS-301-Longsword-Data-Streaming)
 # COS-301-Longsword-Data-Streaming
 Data Streaming module of the NavUP system 
 # Members
