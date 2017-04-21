@@ -5,7 +5,7 @@
 # COS-301-Longsword-Data-Streaming
 Data Streaming module of the NavUP system 
 # Members
-Peter Boxall - 
+Peter Boxall - <a href="https://www.linkedin.com/in/peter-boxall-7096ba141/" target="_blank"> Linkedin</a>
 
 
 Claude Greeff - <a href="https://www.linkedin.com/in/claude-greeff/" target="_blank"> Linkedin</a>
