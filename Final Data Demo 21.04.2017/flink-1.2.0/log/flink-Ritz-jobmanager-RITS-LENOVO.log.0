@@ -1,0 +1,115 @@
+2017-04-12 16:01:48,086 WARN  org.apache.hadoop.util.NativeCodeLoader                       - Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+2017-04-12 16:01:48,456 ERROR org.apache.hadoop.util.Shell                                  - Failed to locate the winutils binary in the hadoop binary path
+java.io.IOException: Could not locate executable null\bin\winutils.exe in the Hadoop binaries.
+	at org.apache.hadoop.util.Shell.getQualifiedBinPath(Shell.java:318)
+	at org.apache.hadoop.util.Shell.getWinUtilsPath(Shell.java:333)
+	at org.apache.hadoop.util.Shell.<clinit>(Shell.java:326)
+	at org.apache.hadoop.util.StringUtils.<clinit>(StringUtils.java:76)
+	at org.apache.hadoop.security.Groups.parseStaticMapping(Groups.java:92)
+	at org.apache.hadoop.security.Groups.<init>(Groups.java:76)
+	at org.apache.hadoop.security.Groups.getUserToGroupsMappingService(Groups.java:239)
+	at org.apache.hadoop.security.UserGroupInformation.initialize(UserGroupInformation.java:255)
+	at org.apache.hadoop.security.UserGroupInformation.ensureInitialized(UserGroupInformation.java:232)
+	at org.apache.hadoop.security.UserGroupInformation.loginUserFromSubject(UserGroupInformation.java:718)
+	at org.apache.hadoop.security.UserGroupInformation.getLoginUser(UserGroupInformation.java:703)
+	at org.apache.hadoop.security.UserGroupInformation.getCurrentUser(UserGroupInformation.java:605)
+	at org.apache.flink.runtime.util.EnvironmentInformation.getUserRunning(EnvironmentInformation.java:91)
+	at org.apache.flink.runtime.util.EnvironmentInformation.logEnvironmentInfo(EnvironmentInformation.java:267)
+	at org.apache.flink.runtime.jobmanager.JobManager$.main(JobManager.scala:1920)
+	at org.apache.flink.runtime.jobmanager.JobManager.main(JobManager.scala)
+2017-04-12 16:01:48,834 INFO  org.apache.flink.runtime.jobmanager.JobManager                - --------------------------------------------------------------------------------
+2017-04-12 16:01:48,834 INFO  org.apache.flink.runtime.jobmanager.JobManager                -  Starting JobManager (Version: 1.2.0, Rev:1c659cf, Date:29.01.2017 @ 21:19:15 UTC)
+2017-04-12 16:01:48,834 INFO  org.apache.flink.runtime.jobmanager.JobManager                -  Current user: Ritz
+2017-04-12 16:01:48,834 INFO  org.apache.flink.runtime.jobmanager.JobManager                -  JVM: Java HotSpot(TM) 64-Bit Server VM - Oracle Corporation - 1.8/25.91-b14
+2017-04-12 16:01:48,834 INFO  org.apache.flink.runtime.jobmanager.JobManager                -  Maximum heap size: 736 MiBytes
+2017-04-12 16:01:48,835 INFO  org.apache.flink.runtime.jobmanager.JobManager                -  JAVA_HOME: (not set)
+2017-04-12 16:01:48,840 INFO  org.apache.flink.runtime.jobmanager.JobManager                -  Hadoop version: 2.3.0
+2017-04-12 16:01:48,840 INFO  org.apache.flink.runtime.jobmanager.JobManager                -  JVM Options:
+2017-04-12 16:01:48,840 INFO  org.apache.flink.runtime.jobmanager.JobManager                -     -Xms768m
+2017-04-12 16:01:48,840 INFO  org.apache.flink.runtime.jobmanager.JobManager                -     -Xmx768m
+2017-04-12 16:01:48,841 INFO  org.apache.flink.runtime.jobmanager.JobManager                -     -Dlog.file=C:\Users\Ritz\Google Drive\2017\Semester 1\COS 301\Assignments\Class Project\Phase 3\Flink\flink-1.2.0\bin\..\log\flink-Ritz-jobmanager-RITS-LENOVO.log
+2017-04-12 16:01:48,841 INFO  org.apache.flink.runtime.jobmanager.JobManager                -     -Dlogback.configurationFile=file:C:\Users\Ritz\Google Drive\2017\Semester 1\COS 301\Assignments\Class Project\Phase 3\Flink\flink-1.2.0\bin\..\conf/logback.xml
+2017-04-12 16:01:48,841 INFO  org.apache.flink.runtime.jobmanager.JobManager                -     -Dlog4j.configuration=file:C:\Users\Ritz\Google Drive\2017\Semester 1\COS 301\Assignments\Class Project\Phase 3\Flink\flink-1.2.0\bin\..\conf/log4j.properties
+2017-04-12 16:01:48,841 INFO  org.apache.flink.runtime.jobmanager.JobManager                -  Program Arguments:
+2017-04-12 16:01:48,841 INFO  org.apache.flink.runtime.jobmanager.JobManager                -     --configDir
+2017-04-12 16:01:48,842 INFO  org.apache.flink.runtime.jobmanager.JobManager                -     C:\Users\Ritz\Google Drive\2017\Semester 1\COS 301\Assignments\Class Project\Phase 3\Flink\flink-1.2.0\bin\..\conf
+2017-04-12 16:01:48,842 INFO  org.apache.flink.runtime.jobmanager.JobManager                -     --executionMode
+2017-04-12 16:01:48,842 INFO  org.apache.flink.runtime.jobmanager.JobManager                -     local
+2017-04-12 16:01:48,842 INFO  org.apache.flink.runtime.jobmanager.JobManager                -  Classpath: C:\Users\Ritz\Google Drive\2017\Semester 1\COS 301\Assignments\Class Project\Phase 3\Flink\flink-1.2.0\bin\..\lib\flink-dist_2.10-1.2.0.jar;C:\Users\Ritz\Google Drive\2017\Semester 1\COS 301\Assignments\Class Project\Phase 3\Flink\flink-1.2.0\bin\..\lib\flink-python_2.10-1.2.0.jar;C:\Users\Ritz\Google Drive\2017\Semester 1\COS 301\Assignments\Class Project\Phase 3\Flink\flink-1.2.0\bin\..\lib\log4j-1.2.17.jar;C:\Users\Ritz\Google Drive\2017\Semester 1\COS 301\Assignments\Class Project\Phase 3\Flink\flink-1.2.0\bin\..\lib\slf4j-log4j12-1.7.7.jar;
+2017-04-12 16:01:48,842 INFO  org.apache.flink.runtime.jobmanager.JobManager                - --------------------------------------------------------------------------------
+2017-04-12 16:01:48,858 INFO  org.apache.flink.runtime.jobmanager.JobManager                - Error while registering signal handler
+java.lang.IllegalArgumentException: Unknown signal: HUP
+	at sun.misc.Signal.<init>(Unknown Source)
+	at org.apache.flink.runtime.util.SignalHandler$Handler.<init>(SignalHandler.java:41)
+	at org.apache.flink.runtime.util.SignalHandler.register(SignalHandler.java:78)
+	at org.apache.flink.runtime.jobmanager.JobManager$.main(JobManager.scala:1921)
+	at org.apache.flink.runtime.jobmanager.JobManager.main(JobManager.scala)
+2017-04-12 16:01:48,859 INFO  org.apache.flink.runtime.jobmanager.JobManager                - Registered UNIX signal handlers for [TERM, INT]
+2017-04-12 16:01:52,585 INFO  org.apache.flink.runtime.jobmanager.JobManager                - Loading configuration from C:\Users\Ritz\Google Drive\2017\Semester 1\COS 301\Assignments\Class Project\Phase 3\Flink\flink-1.2.0\bin\..\conf
+2017-04-12 16:01:52,689 INFO  org.apache.flink.configuration.GlobalConfiguration            - Loading configuration property: jobmanager.rpc.address, localhost
+2017-04-12 16:01:52,689 INFO  org.apache.flink.configuration.GlobalConfiguration            - Loading configuration property: jobmanager.rpc.port, 6123
+2017-04-12 16:01:52,689 INFO  org.apache.flink.configuration.GlobalConfiguration            - Loading configuration property: jobmanager.heap.mb, 256
+2017-04-12 16:01:52,690 INFO  org.apache.flink.configuration.GlobalConfiguration            - Loading configuration property: taskmanager.heap.mb, 512
+2017-04-12 16:01:52,690 INFO  org.apache.flink.configuration.GlobalConfiguration            - Loading configuration property: taskmanager.numberOfTaskSlots, 1
+2017-04-12 16:01:52,690 INFO  org.apache.flink.configuration.GlobalConfiguration            - Loading configuration property: taskmanager.memory.preallocate, false
+2017-04-12 16:01:52,690 INFO  org.apache.flink.configuration.GlobalConfiguration            - Loading configuration property: parallelism.default, 1
+2017-04-12 16:01:52,690 INFO  org.apache.flink.configuration.GlobalConfiguration            - Loading configuration property: jobmanager.web.port, 8081
+2017-04-12 16:01:53,140 INFO  org.apache.flink.runtime.jobmanager.JobManager                - Starting JobManager without high-availability
+2017-04-12 16:01:53,180 INFO  org.apache.flink.runtime.jobmanager.JobManager                - Starting JobManager on localhost:6123 with execution mode LOCAL
+2017-04-12 16:01:53,635 INFO  org.apache.flink.configuration.GlobalConfiguration            - Loading configuration property: jobmanager.rpc.address, localhost
+2017-04-12 16:01:53,635 INFO  org.apache.flink.configuration.GlobalConfiguration            - Loading configuration property: jobmanager.rpc.port, 6123
+2017-04-12 16:01:53,635 INFO  org.apache.flink.configuration.GlobalConfiguration            - Loading configuration property: jobmanager.heap.mb, 256
+2017-04-12 16:01:53,636 INFO  org.apache.flink.configuration.GlobalConfiguration            - Loading configuration property: taskmanager.heap.mb, 512
+2017-04-12 16:01:53,636 INFO  org.apache.flink.configuration.GlobalConfiguration            - Loading configuration property: taskmanager.numberOfTaskSlots, 1
+2017-04-12 16:01:53,636 INFO  org.apache.flink.configuration.GlobalConfiguration            - Loading configuration property: taskmanager.memory.preallocate, false
+2017-04-12 16:01:53,637 INFO  org.apache.flink.configuration.GlobalConfiguration            - Loading configuration property: parallelism.default, 1
+2017-04-12 16:01:53,637 INFO  org.apache.flink.configuration.GlobalConfiguration            - Loading configuration property: jobmanager.web.port, 8081
+2017-04-12 16:01:53,736 INFO  org.apache.flink.runtime.security.modules.HadoopModule        - Hadoop user set to Ritz (auth:SIMPLE)
+2017-04-12 16:01:54,654 INFO  org.apache.flink.runtime.jobmanager.JobManager                - Starting JobManager actor system reachable at localhost:6123
+2017-04-12 16:01:55,276 INFO  akka.event.slf4j.Slf4jLogger                                  - Slf4jLogger started
+2017-04-12 16:01:55,335 INFO  Remoting                                                      - Starting remoting
+2017-04-12 16:01:56,045 INFO  Remoting                                                      - Remoting started; listening on addresses :[akka.tcp://flink@localhost:6123]
+2017-04-12 16:01:56,062 INFO  org.apache.flink.runtime.jobmanager.JobManager                - Starting JobManager web frontend
+2017-04-12 16:01:56,117 INFO  org.apache.flink.runtime.webmonitor.WebMonitorUtils           - Determined location of JobManager log file: C:\Users\Ritz\Google Drive\2017\Semester 1\COS 301\Assignments\Class Project\Phase 3\Flink\flink-1.2.0\bin\..\log\flink-Ritz-jobmanager-RITS-LENOVO.log
+2017-04-12 16:01:56,117 INFO  org.apache.flink.runtime.webmonitor.WebMonitorUtils           - Determined location of JobManager stdout file: C:\Users\Ritz\Google Drive\2017\Semester 1\COS 301\Assignments\Class Project\Phase 3\Flink\flink-1.2.0\bin\..\log\flink-Ritz-jobmanager-RITS-LENOVO.out
+2017-04-12 16:01:56,118 INFO  org.apache.flink.runtime.webmonitor.WebRuntimeMonitor         - Using directory C:\Users\Ritz\AppData\Local\Temp\flink-web-0b7afa57-7e3f-471c-8f82-b4b90c345160 for the web interface files
+2017-04-12 16:01:56,119 INFO  org.apache.flink.runtime.webmonitor.WebRuntimeMonitor         - Using directory C:\Users\Ritz\AppData\Local\Temp\flink-web-a5ca49d2-94de-4e83-8e4d-1a204180bdd0 for web frontend JAR file uploads
+2017-04-12 16:01:56,961 INFO  org.apache.flink.runtime.webmonitor.WebRuntimeMonitor         - Web frontend listening at 0:0:0:0:0:0:0:0:8081
+2017-04-12 16:01:56,961 INFO  org.apache.flink.runtime.jobmanager.JobManager                - Starting JobManager actor
+2017-04-12 16:01:56,983 INFO  org.apache.flink.runtime.blob.BlobServer                      - Created BLOB server storage directory C:\Users\Ritz\AppData\Local\Temp\blobStore-fa41d965-22cd-4d48-a231-caf00063fd4c
+2017-04-12 16:01:56,986 INFO  org.apache.flink.runtime.blob.BlobServer                      - Started BLOB server at 0.0.0.0:49957 - max concurrent requests: 50 - max backlog: 1000
+2017-04-12 16:01:57,007 INFO  org.apache.flink.runtime.metrics.MetricRegistry               - No metrics reporter configured, no metrics will be exposed/reported.
+2017-04-12 16:01:57,057 INFO  org.apache.flink.runtime.jobmanager.JobManager                - Starting embedded TaskManager for JobManager's LOCAL execution mode
+2017-04-12 16:01:57,071 INFO  org.apache.flink.runtime.jobmanager.MemoryArchivist           - Started memory archivist akka://flink/user/archive
+2017-04-12 16:01:57,089 INFO  org.apache.flink.runtime.jobmanager.JobManager                - Starting JobManager at akka.tcp://flink@localhost:6123/user/jobmanager.
+2017-04-12 16:01:57,149 INFO  org.apache.flink.runtime.taskmanager.TaskManager              - Messages between TaskManager and JobManager have a max timeout of 10000 milliseconds
+2017-04-12 16:01:57,168 INFO  org.apache.flink.runtime.taskmanager.TaskManager              - Temporary file directory 'C:\Users\Ritz\AppData\Local\Temp': total 838 GB, usable 124 GB (14.80% usable)
+2017-04-12 16:01:57,215 INFO  org.apache.flink.runtime.io.network.buffer.NetworkBufferPool  - Allocated 64 MB for network buffer pool (number of memory segments: 2048, bytes per segment: 32768).
+2017-04-12 16:01:57,330 INFO  org.apache.flink.runtime.io.network.NetworkEnvironment        - Starting the network environment and its components.
+2017-04-12 16:01:57,366 WARN  org.apache.flink.runtime.taskmanager.TaskManagerLocation      - No hostname could be resolved for the IP address 127.0.0.1, using IP address as host name. Local input split assignment (such as for HDFS files) may be impacted.
+2017-04-12 16:01:57,554 INFO  org.apache.flink.runtime.taskmanager.TaskManager              - Limiting managed memory to 0.7 of the currently free heap space (461 MB), memory will be allocated lazily.
+2017-04-12 16:01:57,566 INFO  org.apache.flink.runtime.io.disk.iomanager.IOManager          - I/O manager uses directory C:\Users\Ritz\AppData\Local\Temp\flink-io-4cb185d3-a6df-4bdd-95cd-cb86968bff78 for spill files.
+2017-04-12 16:01:57,591 INFO  org.apache.flink.runtime.metrics.MetricRegistry               - No metrics reporter configured, no metrics will be exposed/reported.
+2017-04-12 16:01:57,598 INFO  org.apache.flink.runtime.webmonitor.WebRuntimeMonitor         - Starting with JobManager akka.tcp://flink@localhost:6123/user/jobmanager on port 8081
+2017-04-12 16:01:57,598 INFO  org.apache.flink.runtime.webmonitor.JobManagerRetriever       - New leader reachable under akka.tcp://flink@localhost:6123/user/jobmanager:null.
+2017-04-12 16:01:57,602 INFO  org.apache.flink.runtime.filecache.FileCache                  - User file cache uses directory C:\Users\Ritz\AppData\Local\Temp\flink-dist-cache-0ec4b9f9-4165-428e-9353-38147d8d0407
+2017-04-12 16:01:57,661 INFO  org.apache.flink.runtime.clusterframework.standalone.StandaloneResourceManager  - Trying to associate with JobManager leader akka.tcp://flink@localhost:6123/user/jobmanager
+2017-04-12 16:01:57,691 INFO  org.apache.flink.runtime.taskmanager.TaskManager              - Starting TaskManager actor at akka://flink/user/taskmanager#39843688.
+2017-04-12 16:01:57,693 INFO  org.apache.flink.runtime.taskmanager.TaskManager              - TaskManager data connection information: ResourceID{resourceId='cec332cf716efc9843ecad63ec933573'} @ 127.0.0.1 (dataPort=-1)
+2017-04-12 16:01:57,694 INFO  org.apache.flink.runtime.taskmanager.TaskManager              - TaskManager has 1 task slot(s).
+2017-04-12 16:01:57,697 INFO  org.apache.flink.runtime.taskmanager.TaskManager              - Memory usage stats: [HEAP: 89/736/736 MB, NON HEAP: 34/35/-1 MB (used/committed/max)]
+2017-04-12 16:01:57,706 INFO  org.apache.flink.runtime.taskmanager.TaskManager              - Trying to register at JobManager akka.tcp://flink@localhost:6123/user/jobmanager (attempt 1, timeout: 500 milliseconds)
+2017-04-12 16:01:58,235 INFO  org.apache.flink.runtime.taskmanager.TaskManager              - Trying to register at JobManager akka.tcp://flink@localhost:6123/user/jobmanager (attempt 2, timeout: 1000 milliseconds)
+2017-04-12 16:01:59,019 INFO  org.apache.flink.runtime.jobmanager.JobManager                - JobManager akka.tcp://flink@localhost:6123/user/jobmanager was granted leadership with leader session ID None.
+2017-04-12 16:01:59,043 INFO  org.apache.flink.runtime.clusterframework.standalone.StandaloneResourceManager  - Resource Manager associating with leading JobManager Actor[akka://flink/user/jobmanager#-1086713148] - leader session null
+2017-04-12 16:01:59,044 INFO  org.apache.flink.runtime.clusterframework.standalone.StandaloneResourceManager  - TaskManager ResourceID{resourceId='cec332cf716efc9843ecad63ec933573'} has started.
+2017-04-12 16:01:59,048 INFO  org.apache.flink.runtime.instance.InstanceManager             - Registered TaskManager at 127.0.0.1 (akka://flink/user/taskmanager) as 07e1b0e84141d0d8302d5337c9b39a7b. Current number of registered hosts is 1. Current number of alive task slots is 1.
+2017-04-12 16:01:59,052 INFO  org.apache.flink.runtime.taskmanager.TaskManager              - Successful registration at JobManager (akka://flink/user/jobmanager), starting network stack and library cache.
+2017-04-12 16:01:59,093 INFO  org.apache.flink.runtime.taskmanager.TaskManager              - Determined BLOB server address to be localhost/127.0.0.1:49957. Starting BLOB cache.
+2017-04-12 16:01:59,095 INFO  org.apache.flink.runtime.blob.BlobCache                       - Created BLOB cache storage directory C:\Users\Ritz\AppData\Local\Temp\blobStore-0a5e2568-afe1-4a99-abfd-353e6eed8921
+2017-04-12 16:14:38,335 INFO  org.apache.flink.runtime.jobmanager.JobManager                - RECEIVED SIGNAL 2: SIGINT. Shutting down as requested.
+2017-04-12 16:14:38,345 INFO  org.apache.flink.runtime.blob.BlobCache                       - Shutting down BlobCache
+2017-04-12 16:14:38,346 INFO  org.apache.flink.runtime.webmonitor.WebRuntimeMonitor         - Removing web dashboard root cache directory C:\Users\Ritz\AppData\Local\Temp\flink-web-0b7afa57-7e3f-471c-8f82-b4b90c345160
+2017-04-12 16:14:38,353 INFO  org.apache.flink.runtime.io.disk.iomanager.IOManager          - I/O manager removed spill file directory C:\Users\Ritz\AppData\Local\Temp\flink-io-4cb185d3-a6df-4bdd-95cd-cb86968bff78
+2017-04-12 16:14:38,354 INFO  org.apache.flink.runtime.blob.BlobServer                      - Stopped BLOB server at 0.0.0.0:49957
+2017-04-12 16:14:38,366 INFO  org.apache.flink.runtime.webmonitor.WebRuntimeMonitor         - Removing web dashboard jar upload directory C:\Users\Ritz\AppData\Local\Temp\flink-web-a5ca49d2-94de-4e83-8e4d-1a204180bdd0

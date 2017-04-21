@@ -1,0 +1,25 @@
+{
+	"Location_result": [
+	   {
+		"msg":{
+				"sta_eth_mac":{
+					"addr": "c0:bd:d1:56:81:f3"
+				},
+				"sta_location_x": 17.033, 
+				"sta_location_y": 16.5164, 
+				"error_level": 9, 
+				"associated": true, 
+				"campus_id": "08FBBBBF81D937759B5DAC4963DFBC1A", 
+				"building_id": "24C73B58A1F33C3ABE427485A9977BFF", 
+				"floor_id": "D635A61B06673775ADFF61D70B55785C", 
+				"hashed_sta_eth_mac": "A09B5D8F99F9BB8034A8ADBBEC11B24494981096", 
+				"loc_algorithm": "ALGORITHM_CALIBRATION", 
+				"longitude": -122.008,
+				"latitude": 37.4129, 
+				"altitude": 5,
+				"unit": "METERS"
+			},
+			"ts": 1434750262
+		}
+	]
+}
