@@ -21,7 +21,7 @@ Ritesh Doolabh - <a href="https://www.linkedin.com/in/ritesh-doolabh-149b9813a/"
 Lucian Sargeant - <a href="https://www.linkedin.com/in/lucian-sargeant-8b2268132/" target="_blank"> Linkedin</a>
 
 
-Harris Leshaba - 
+Harris Leshaba - <a href="https://www.linkedin.com/in/harris-leshaba-597a33141/" target="_blank"> Linkedin</a>
 # Scope
 The data module concerns itself with two primary agents: the system server and the
 generic user access channel which can be 1 of 3 possibilities who all behave in the
