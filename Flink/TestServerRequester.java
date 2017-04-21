@@ -2,10 +2,11 @@ import java.io.*;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.concurrent.TimeUnit;
+import java.util.Scanner;
 
 public class TestServerRequester
 {
-    public static void main(String[] argc) throws IOException
+    public static void main(String[] args) throws IOException
     {
         final int portNumber = 9000;
         boolean active = true;
@@ -38,14 +39,33 @@ public class TestServerRequester
             pw = new PrintWriter(os, true);
         }
 
-        long startTime = System.nanoTime();
 
-        for(int i = 0; i < 1; i++)
+        long startTime = 0;
+        long endTime = 0;
+
+        if(Boolean.parseBoolean(args[0]))
         {
-            pw.println("48:5A:3F:79:A3:D1");
-        }
+            startTime = System.nanoTime();
 
-        long endTime = System.nanoTime();
+            for(int i = 0 ; i < 120 ; i++)
+            {
+                pw.println("EC:1F:72:B7:5D:39");
+            }
+
+            startTime = System.nanoTime();
+        }
+        else
+        {
+            startTime = System.nanoTime();
+
+            for(int i = 0; i < 25000; i++)
+            {
+                pw.println("48:5A:3F:79:A3:D1");
+            }
+
+            endTime = System.nanoTime();
+
+        }
 
         System.out.println("Time to send 25000 requests: " + TimeUnit.NANOSECONDS.toMillis(endTime - startTime) + " milliseconds.");
 
@@ -54,3 +74,4 @@ public class TestServerRequester
         socket.close();
     }
 }
+
