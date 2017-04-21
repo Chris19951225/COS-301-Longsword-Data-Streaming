@@ -27,15 +27,8 @@ public class Filter //Only an example of filter, actual implementation will be d
     public static JSONObject filterArubaReturn(String json) throws FileNotFoundException, IOException
     {
         //Just a tester json object, real one should be passed as the string parameter
-        File f = new File("C:\\Users\\Hristian Vitrychenko\\Documents\\COS301\\DAta\\Json.txt");
-        String jsonTxt = null; 
-        if (f.exists())
-        {
-            InputStream is = new FileInputStream("C:\\Users\\Hristian Vitrychenko\\Documents\\COS301\\DAta\\Json.txt");
-            jsonTxt = IOUtils.toString(is);       
-        }
         
-        JSONObject unclean = new JSONObject(jsonTxt);
+        JSONObject unclean = new JSONObject(json);
         
         //the bellow can later be removed 
         String addr = null;
@@ -45,7 +38,6 @@ public class Filter //Only an example of filter, actual implementation will be d
         String campus_id = null, building_id = null, floor_id = null, hashed_sta_eth_mac = null; 
         String loc_algorithm = null;
         double longitude = 0, latitude = 0, altitude = 0;
-        String unit = null; 
         
         JSONArray inner = unclean.getJSONArray("Location_result"); 
         JSONObject pos = inner.getJSONObject(0);
@@ -66,7 +58,6 @@ public class Filter //Only an example of filter, actual implementation will be d
         longitude = location.getDouble("longitude");
         latitude =location.getDouble("latitude");
         altitude = location.getDouble("altitude");
-        unit = location.getString("unit");
         
         String clean = "";
         clean += "{\n   \"Location\": {\n";
@@ -83,10 +74,7 @@ public class Filter //Only an example of filter, actual implementation will be d
         clean += "      \"longitude\": " + longitude + ",\n";
         clean += "      \"latitude\": " + latitude + ",\n";
         clean += "      \"altitude\": " + altitude + ",\n";
-        clean += "      \"unit\": \"" + unit + "\"\n";
         clean += "  }\n}"; 
-        
-        System.out.println(clean);
         
         JSONObject cleaned = new JSONObject(clean);
         
