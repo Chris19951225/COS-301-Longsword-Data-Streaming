@@ -1,0 +1,5 @@
+To satisfy the dependencies for compilation of diagrams call:
+$ make dependecies
+To compile the diagrams:
+$ make diagrams
+

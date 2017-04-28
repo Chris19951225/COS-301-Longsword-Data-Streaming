@@ -1,0 +1,105 @@
+March 15 2017 14:30-15:20
+
+Project Management:
+  Impediments to progress:
+    Not enough information. The system architecture is not clear.
+    University is reluctant to give information:
+      Only allowed to use the name of the router.
+      We will only have access to 2 routers.
+      We wont have access to mac addresses.
+      Network:
+        Hoping for access to API (aruba) which is the universities wifi management entity. API will give us access to figure out location of people and flow map.
+      Security:
+        Dont want to give us details of their system.
+    
+  Recommendations:
+    We need clarification on what data we will have access to.
+    We need clarification on what other subsystems will require from us.
+    Who will be pulling and who will be pushing. This can be provided with a component diagram.
+    We could consult the integration team for clarification on the inter subsystem APIs.
+    To get any work done in the light of uncertainty and incomplete information we will have to make assumptions.
+      We assume that we will get user location data tied with persistent ID.
+
+  Vision for the mock demo:
+    Not clear yet. Hopefully on friday.
+
+  Decisions made:
+    Draft a document of question for the client on friday.
+    Startup slack group.
+
+March 17 12:30-13:00
+  Concerns raised:
+    The scope of the data streaming subsystem and what services it should provide to the rest of the system.
+    What hardware will the system run on?
+    Are security measures such as kerberos and per client authentication needed?
+    What API should we expose to the other subsystems? REST? Flink or other messaging system specific protocol?
+
+  Feedback received:
+    For the purposes of next weeks demonstration, only a device location and ID must be published in the messaging system.
+    We do not know yet what hardware is needed, but the lecturer said it should not be a problem to accommodate our needs.
+    No security measures for the purposes of this prototype system needs to be implemented.
+    We should involve the integration team in the discussion of what sort of an API we should expose to the rest of the system.
+      RESTfull API is ideal for low coupling and does not require much from the other subsystems to work.
+      However, the client has expressed that the system should be as fast as possible.
+      In addition, Flink, our technology of choice, does not have a REST API. 
+      Because REST is not an option, it is unavoidable that the data streaming subsystem will impose additional requirements
+      on the other subsystems in order for them to talk to each other. 
+      This will be done by involving the integration team and teams from other relevant subsystems to reach consensus on the protocol.
+      For the purpose of next weeks demonstration, only navigation will need to be involved in the talks about APIs
+
+March Wed 13:36-15:34
+  Attendees:
+    Data streaming team
+    Integration team
+  Concerns raised:
+    Scope and responsibility of each subsystem.
+    Consensus between subsystems on a uniform API.
+
+  Discussions:
+    Integration team clarified that the subsystem's responsibility
+    is restricted to location data according to a discussion that was had
+    with the lecturer.
+
+    Some discussion on where the data team's responsibilities end
+    and where the integration team's responsibilities start.
+
+    General discussion on design decisions for the entire system
+    regarding communication between subsystems and technologies
+    that will help to facilitate that. A pub/sub system seems to
+    be the attractive solution. Perhaps Kafka or nsq.io.
+
+    What filtering and sanitation can be done to demonstrate
+    the data streaming subsystem.
+
+  Decisions made:
+    Change the dummy data stream to generate erroneous data
+    every now and the. This way we can show that Flink can
+    validate the datastream.
+
+    Write a validation routine in flink.
+    Invalid data gets dumped to an error log.
+
+    Write a sanitiser routing in flink.
+    Remove vestigial records from the json stream.
+
+March 31 11:30-12:12
+  Attendees:
+    Data team
+  Itenerary:
+    
+  Discussion:
+    We will be getting access to the analytics engine of arubanet.
+      It has a restful pub/sub api.
+    The requirements inside the domain of the data stream subsystem.
+    
+  Concerns raised:
+    Our requirements keep changing. There is a communication problem between the customer and the respresentatives and integration team.
+    The requirements need to be enumerated and put on paper for signoff with the relevant parties.
+    Data team does not have the concrete requirements yet. The representative says that we will have them clarified on Monday, but the deadline is on Wednesday.
+    If the data team does not have the requirements, no project management can occur.
+
+  Plan of action:
+    Write mock data generators that are congruent with the aruba analytics engine.
+    Have meetings with Vreda, integration and GIS about expectations and requirements from us.
+    Write code serves requests from GIS.
+    

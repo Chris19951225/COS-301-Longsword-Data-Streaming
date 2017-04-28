@@ -1,0 +1,97 @@
+{
+	"Location_result":[
+		{
+			"msg":{
+				"sta_eth_mac": {
+					"addr": "1e:06:2a:1c:be:3b"
+				},
+				"sta_location_x": "5",
+				"sta_location_y": "7",
+				"error_level": 9,
+				"associated": true,
+				"campus_id": "08FBBBBF81D937759B5DAC4963DFBC1A",
+				"building_id": "24C73B58A1F33C3ABE427485A9977BFF",
+				"floor_id": "D635A61B06673775ADFF61D70B55785C",
+				"hashed_sta_eth_mac": "A09B5D8F99F9BB8034A8ADBBEC11B24494981096",
+				"geofence_ids": true,
+				"loc_algorithm": "ALGORITHM_CALIBRATION",
+				"longitude": "-122.008",
+				"latitude": "37.4129",
+				"altitude": 5,
+				"unit": "METERS"
+			},
+			"ts": 1434750262
+		}
+	]
+} 
+
+
+//Strip 1
+
+[
+	{
+		"msg":{
+			"loc_algorithm":"ALGORITHM_CALIBRATION",
+			"building_id":"24C73B58A1F33C3ABE427485A9977BFF",
+			"altitude":5,
+			"error_level":9,
+			"sta_eth_mac":{
+				"addr":"1e:06:2a:1c:be:3b"
+			},
+			"latitude":"37.4129",
+			"hashed_sta_eth_mac":"A09B5D8F99F9BB8034A8ADBBEC11B24494981096",
+			"campus_id":"08FBBBBF81D937759B5DAC4963DFBC1A",
+			"unit":"METERS",
+			"associated":true,
+			"sta_location_x":"5",
+			"geofence_ids":true,"floor_id":
+			"D635A61B06673775ADFF61D70B55785C",
+			"sta_location_y":"7",
+			"longitude":"-122.008"
+		},
+		"ts":1434750262
+	}
+]
+
+//Strip 2
+{
+	"msg":{
+		"loc_algorithm":"ALGORITHM_CALIBRATION",
+		"building_id":"24C73B58A1F33C3ABE427485A9977BFF",
+		"altitude":5,
+		"error_level":9,
+		"sta_eth_mac":{
+			"addr":"1e:06:2a:1c:be:3b"
+		},
+		"latitude":"37.4129",
+		"hashed_sta_eth_mac":"A09B5D8F99F9BB8034A8ADBBEC11B24494981096",
+		"campus_id":"08FBBBBF81D937759B5DAC4963DFBC1A",
+		"unit":"METERS",
+		"associated":true,"sta_location_x":"5",
+		"geofence_ids":true,
+		"floor_id":"D635A61B06673775ADFF61D70B55785C",
+		"sta_location_y":"7",
+		"longitude":"-122.008"
+	},
+	"ts":1434750262
+}
+
+//Strip 3
+{
+	"loc_algorithm":"ALGORITHM_CALIBRATION",
+	"building_id":"24C73B58A1F33C3ABE427485A9977BFF",
+	"altitude":5,
+	"error_level":9,
+	"sta_eth_mac":{
+		"addr":"1e:06:2a:1c:be:3b"
+	},
+	"latitude":"37.4129",
+	"hashed_sta_eth_mac":"A09B5D8F99F9BB8034A8ADBBEC11B24494981096",
+	"campus_id":"08FBBBBF81D937759B5DAC4963DFBC1A",
+	"unit":"METERS","associated":true,
+	"sta_location_x":"5",
+	"geofence_ids":true,
+	"floor_id":"D635A61B06673775ADFF61D70B55785C",
+	"sta_location_y":"7",
+	"longitude":"-122.008"
+}

@@ -1,0 +1,47 @@
+\subsection{End User}
+This section is intended for system administrators and anyone that needs to deploy this subsystem.
+\subsubsection{Installation and dependencies}
+To satisfy dependencies run the following shell command:
+\begin{verbatim}
+  $ ./integration_setup.sh
+\end{verbatim}
+\subsubsection{Configuration}
+All configuration of the data subsystem is done as command line arguments to the main entry point of the system, query\_resolver.py. The arguments are as follows:
+\begin{verbatim}
+  usage: query_resolver.py [-h] [--nsqlookupd_hostname] [--nsqlookupd_port]
+                         [--nsqlookupd_polling_interval] [--nsqd_hostname]
+                         [--nsqd_port] [--subscribe_topic] [--nsq_channel]
+                         [--aruba_hostname] [--aruba_port] [--aruba_username]
+                         [--aruba_password]
+
+Serving location requests on the an NSQ topic
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --nsqlookupd_hostname
+                        The http hostname of the NSQ lookupd daemon (default:
+                        http://127.0.0.1)
+  --nsqlookupd_port     The port number of the NSQ lookupd daemon (default:
+                        4161)
+  --nsqlookupd_polling_interval
+                        The amount of time in seconds between querying all of
+                        the supplied nsqlookupd instances. A random amount of
+                        time based on this value will be initially introduced
+                        in order to add jitter when multiple readers are
+                        running (default: 15)
+  --nsqd_hostname       The http hostname of the NSQ daemon (default:
+                        http://127.0.0.1)
+  --nsqd_port           The http port of the NSQ daemon (default: 4150)
+  --subscribe_topic     The nsq topic to listen for requests (default: data)
+  --nsq_channel         The channel within an NSQ topic to listen for requests
+                        (default: navup)
+  --aruba_hostname      The hostname of the aruba location engine (default:
+                        https://137.215.6.208)
+  --aruba_port          The port of the aruba location engine (default: )
+  --aruba_username      The username to use the aruba location engine
+                        (default: )
+  --aruba_password      The username to use the aruba location engine
+                        (default: )
+\end{verbatim}
+\subsubsection{Troubleshooting}
+Any malformed queries made to the data subsystem are logged in a file called error.log for diagnostic purposes. In addition, any connection issues to either the ALE or NSQ server is also be logged.

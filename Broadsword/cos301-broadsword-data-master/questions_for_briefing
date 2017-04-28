@@ -1,0 +1,35 @@
+What does the rest of the system need from the data stream subsystem?
+What are the constraints of the subsystem? (memory, timing). Hardware limitations can be an issue with with Kafka since it needs a minimum of 8GB of memory.
+How many events per second should the system handle?
+Who's responsibility is deployment of the technology? Data or Integration?
+    The reason this is asked is because the data stream subsystem, if done right, is simply the deployment of the right technologies. Of course we need to do the research as to what these technologies will be.
+Is the API over the wire?
+    If it is, it might be best to use a REST API. Kafa becomes a better option then since flink does not have a REST API to make use of, yet Kafka does.
+    Alternatively, if we need a lightweight system that uses minimal resources, due to hardware limitations, then http://nsq.io/ might be a good option even though it is quite a young project.
+Does this subsystem have any persistence?
+	Any underlying database to recovery from power failure
+Does the data stream subsystem implement any of the external services, such as analytics?
+From the spec, "The idea is that a generic downstream/upstream exists between user devices and the
+system server", this seems to imply that the data stream subsystem is the layer between the outside world and the rest of the system. Is this correct?
+Do other subsystems communicate with each other through the data stream subsystem?
+  If this is the case then any Message Orientated Middleware is a good options to make use of. For example Apache ActiveMQ
+Issues with Apache Flink:
+  No publisher, subscriber authentication.
+  Requires other subsystems to use its language bindings as an api.
+  Does not have a REST API.
+
+
+Research sources:
+https://dzone.com/articles/exploring-message-brokers
+http://stackoverflow.com/questions/731233/activemq-or-rabbitmq-or-zeromq-or?rq=1
+
+Book for demonstration
+
+Mock answer: Locate the device that is connected. Just a location with a device ID
+REST services. Define your own protocol. Discuss it with integration.
+Stream data comes from wifi access point controllers.
+
+Security:
+NA
+Hardware:
+Unknown
