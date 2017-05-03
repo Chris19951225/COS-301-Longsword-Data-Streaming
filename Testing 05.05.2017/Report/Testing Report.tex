@@ -106,7 +106,7 @@ In the Broadword python file location\_lookup.py, they attempt to connect to Aru
 They then attempt to send a request to Aruba with a mac address, expecting a raw JSON object in return. They then return 
 sta\_location\_x, sta\location\_y, building\_id and floor\_id from the raw JSON object. The reason they only got half of the marks
 is because they do not actually get an existing location, rather resorting to hard coded, mock JSON that they themselves provide 
-from a file called mock_location_json. This was further proven to be the case when testing the program returned a JSON object despite the lack of LAN or any type of connection to Aruba whatsoever. 
+from a file called mock_location_json. This was further proven to be the case when testing the program returned a JSON object despite the lack of LAN or any type of connection to Aruba whatsoever. They also make use of a class called ArubaLocationGeneration.py that returns fake Aruba responses. Whilst the mock process of what should happen warrents them some marks it is not practically applicable, hence the followed up deduction.  
 \begin{flushleft}This functional requirement was not fully fulfilled by the Broadsword team.\end{flushleft}
 
 \subsection{Returning a location to the source of the request.}
@@ -115,6 +115,8 @@ from a file called mock_location_json. This was further proven to be the case wh
 \section{Non-Functional Requirements}
 
 \subsection{Level of concurrency of the task.}
+\begin{flushleft}MARK: 0\end{flushleft}
+Broadsword made use of a server known as NSQ which is widely known for its message passing based procedures. Whilst the NSQ core was built in Go (a programming language with built in concurreny), Broadsword did not seem to make use of any of those concurrent features in their code. 
 
 \subsection{Performance of the request processing (time taken to receive a response).}
 
