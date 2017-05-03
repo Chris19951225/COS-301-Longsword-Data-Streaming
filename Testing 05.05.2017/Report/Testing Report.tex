@@ -87,6 +87,7 @@ We will be testing the various cases and giving a brief description of how we te
 
 \section{Service Contracts}
 
+
 \subsection{Retrieving and passing device MAC address.}
 \begin{flushleft}MARK: 10\end{flushleft}
 The access module sends a location request to the data module via the NSQ server,the access module has to subscribes to a topic.The main entry point of the system, query\_resolver.py, sends the mac address to the aruba server in a query to get the location of the device.
@@ -143,6 +144,13 @@ Broadsword made use of a server known as NSQ which is widely known for its messa
 
 
 \section{Use Cases}
+
+Broadsword has made use of a NSQ.
+A 'nsqd' instance is designed to handle multiple streams of data at once.
+In NSQ terms, streams are called "topics" where a topic can have 1 or more "channels".
+A channel maps to a downstream service consuming a topic.
+The method broadsword used was to create a topic, "data", through subscribing to channel "navup", which is a channel on the "data" topic. The topic is created through the first subscription.
+This method lets channels and topics buffer their data independently. This allows for fast downstream, preventing a slow consumer to cause a bottleneck or delay.
 
 \subsection{Upstream communication.}
 \begin{flushleft}MARK: 8\end{flushleft}
