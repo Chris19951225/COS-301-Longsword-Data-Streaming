@@ -122,6 +122,14 @@ In the python file query\_resolver.py, Broadsword provides the options of using 
 
 
 \subsection{Returning a location to the source of the request.}
+\begin{flushleft}MARK: 8\end{flushleft}
+After the Aruba ALE connection is made by the aruba-wrapper class, the results of the location query are then delt with in the LocationLookup class. This class instantiates and exectues the aruba-wrapper implementation and then processes the JSON results to filter out what is needed. 
+\begin{flushleft}This functional requirement was fulfilled by the Broadsword team.\end{flushleft}
+\begin{figure}[ht]
+  \includegraphics[width=350px]{Images/jsonreturn.jpg}
+  \caption{JSON returned}
+  \label{fig:JSON returned}
+\end{figure}
 
 
 \section{Non-Functional Requirements}
