@@ -128,6 +128,16 @@ from a file called mock_location_json. This was further proven to be the case wh
 \begin{flushleft}MARK: 0\end{flushleft}
 Broadsword made use of a server known as NSQ which is widely known for its message passing based procedures. Whilst the NSQ core was built in Go (a programming language with built in concurreny), Broadsword did not seem to make use of any of those concurrent features in their code. This was made apparent in testNavigationConsumer.py where each NSQ action was made on after the other with no concurrency apparent anywhere in terms of mac address processing and message passing. In terms of concurrent programming in general, there is a none in any of the code presented by Broadsword. 
 \begin{flushleft}This non-functional requirement was not fulfilled by the Broadsword team.\end{flushleft}
+\begin{figure}[ht]
+  \includegraphics[width=350px]{Images/concurrency.PNG}
+  \caption{NSQ Use Without Concurrency}
+  \label{NSQ Use Without Concurrency}
+\end{figure}
+\begin{figure}[ht]
+  \includegraphics[width=350px]{Images/concurrency2.PNG}
+  \caption{NSQ Writer}
+  \label{NSQ Writer}
+\end{figure}
 
 \subsection{Performance of the request processing (time taken to receive a response).}
 
