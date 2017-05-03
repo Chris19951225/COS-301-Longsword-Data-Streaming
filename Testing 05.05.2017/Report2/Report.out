@@ -7,7 +7,7 @@
 \BOOKMARK [2][-]{subsection.3.4}{Returning a location to the source of the request.}{section.3}% 7
 \BOOKMARK [1][-]{section.4}{Non-Functional Requirements}{}% 8
 \BOOKMARK [2][-]{subsection.4.1}{Level of concurrency of the task.}{section.4}% 9
-\BOOKMARK [2][-]{subsection.4.2}{Performance of the request processing \(time taken to receive a response\).}{section.4}% 10
+\BOOKMARK [2][-]{subsection.4.2}{Performance of the request processing.}{section.4}% 10
 \BOOKMARK [2][-]{subsection.4.3}{Maintainability and modularity of the code and repository.}{section.4}% 11
 \BOOKMARK [2][-]{subsection.4.4}{Integrability and ease of transfer into a final system.}{section.4}% 12
 \BOOKMARK [1][-]{section.5}{Use Cases}{}% 13

@@ -130,6 +130,7 @@ This functional requirement was not fully fulfilled by the Broadsword team.
   \caption{aruba\textunderscore wrapper.py}
   \label{arubawrapper.py}
 \end{figure}
+
 \begin{figure}[ht]
   \includegraphics[width=350px]{Images/LocLookup.JPG}
   \caption{Mock JSON}
@@ -185,7 +186,34 @@ This non-functional requirement was not fulfilled by the Broadsword team.
   \label{NSQ Writer}
 \end{figure}
 
-\subsection{Performance of the request processing (time taken to receive a response).}
+\subsection{Performance of the request processing.}
+\begin{flushleft}
+MARK: 1
+\end{flushleft}
+
+\begin{flushleft}
+Broadsword used a NSQ server which is a message passing system that primarily relies on queue structures to store information. Although NSQ does allow for concurrent programmability, these features were not used efficiently enough to allow large numbers of requests to be "streamed" at high speeds. We simply used a timer in their code to count the number of instances of the location object that was returned for a specific MAC address. This terminated the code after 60 seconds and gave the final number of instances returned.   
+\end{flushleft}
+
+\begin{flushleft}
+As can be seen from the screen-shots below, within the duration of 60 seconds, the system only managed to return 63 Location objects for a single mac address. In terms of real-world functionality, this would mean a significant bottleneck on the system. This is because the system would need at a minimum roughly 30 000 requests to be fulfilled in a matter of 60 seconds. In the regard of high speed data streaming, the Broadsword Data module has failed.
+\end{flushleft}
+
+\begin{flushleft}
+This non-functional requirement was not fulfilled by the Broadsword team.
+\end{flushleft}
+
+\begin{figure}[ht]
+  \includegraphics[width=350px]{Images/RequestsSent.png}
+  \caption{Number of requests processed in 60 Seconds}
+  \label{Number of Requests}
+\end{figure}
+
+\begin{figure}[ht]
+  \includegraphics[width=350px]{Images/timer.png}
+  \caption{Code inserted to test the number of requests processed in 60 seconds}
+  \label{Testing Code}
+\end{figure}
 
 \subsection{Maintainability and modularity of the code and repository.}
 
