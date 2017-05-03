@@ -95,7 +95,8 @@ In query\_resolver.py, the handler function receives a request, it then passes t
 \begin{flushleft}This functional requirement was fulfilled by the Broadsword team.\end{flushleft}
 \begin{figure}[ht]
   \includegraphics[width=350px]{Handler.jpg}
-  \caption{Handler function.}
+
+\caption{Handler function.}
   \label{fig:Handler function}
 \end{figure}
 
@@ -153,6 +154,8 @@ In NSQ terms, streams are called "topics" where a topic can have 1 or more "chan
 A channel maps to a downstream service consuming a topic.
 The method broadsword used was to create a topic, "data", through subscribing to channel "navup", which is a channel on the "data" topic. The topic is created through the first subscription.
 This method lets channels and topics buffer their data independently. This allows for fast downstream, preventing a slow consumer to cause a bottleneck or delay.
+
+Successful upstream and downstream communication ticks the use case boxes, although more efficient changes could be made for concurrent processing, a mark of 8 out of 10 for downstream and upstream seems fair.
 
 \subsection{Upstream communication.}
 \begin{flushleft}MARK: 8\end{flushleft}
