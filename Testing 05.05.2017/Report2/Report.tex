@@ -75,6 +75,7 @@ Compiled By \\[\baselineskip]
 
 \newpage
 \section{Introduction}
+\section{Introduction}
 \begin{flushleft}
 For this phase we will be testing the Data module of the BroadSword Team. We have split the testing phase according to Functional Requirements, Non-Functional Requirements and Use Cases. 
 \end{flushleft}
@@ -87,15 +88,14 @@ We will be testing the various cases and giving a brief description of how we te
 
 \section{Service Contracts}
 
-
 \subsection{Retrieving and passing device MAC address.}
 \begin{flushleft}
 MARK: 10
 \end{flushleft}
 
 \begin{flushleft}
-The access module sends a location request to the data module via the NSQ server,the access module has to subscribes to a topic.The main entry point of the system, query\_resolver.py, sends the mac address to the aruba server in a query to get the location of the device.
-In query\_resolver.py, the handler function receives a request, it then passes the mac address to the searcher function-which will create a query to get the location for the device.
+The access module sends a location request to the data module via the NSQ server,the access module has to subscribes to a topic.The main entry point of the system, query resolver.py, sends the mac address to the aruba server in a query to get the location of the device.
+In query resolver.py, the handler function receives a request, it then passes the mac address to the searcher function-which will create a query to get the location for the device.
 \end{flushleft}
 
 \begin{flushleft}
@@ -105,7 +105,7 @@ This functional requirement was fulfilled by the Broadsword team.
   \includegraphics[width=350px]{Handler.png}
 
 \caption{Handler function.}
-  \label{fig:Handler function}
+  \label{Handler function}
 \end{figure}
 
 \subsection{Logging in and maintaining a session with Aruba ALE.}
@@ -118,7 +118,7 @@ MARK: 10
 \end{flushleft}
 
 \begin{flushleft}
-In the python file query\_resolver.py, Broadsword provides the options of using mock data to test their program or to follow standard procedure and use real data from Aruba by connecting to it through location\_lookup.py, building\_lookup.py and floor\_lookup.py. The previously mentioned python files each connect to Aruba and all seperately log in by utilising aruba\_wrapper.py which establishes and maintains a session with Aruba. Each class also filters their own JSON objects that are returned by Aruba and return only the necessary data thus fulfilling the requirement of processing requests and retrieving location. 
+In the python file query\textunderscore resolver.py, Broadsword provides the options of using mock data to test their program or to follow standard procedure and use real data from Aruba by connecting to it through location\textunderscore lookup.py, building\textunderscore lookup.py and floor\textunderscore lookup.py. The previously mentioned python files each connect to Aruba and all seperately log in by utilising aruba\textunderscore wrapper.py which establishes and maintains a session with Aruba. Each class also filters their own JSON objects that are returned by Aruba and return only the necessary data thus fulfilling the requirement of processing requests and retrieving location. 
 \end{flushleft}
   
 \begin{flushleft}
@@ -127,8 +127,8 @@ This functional requirement was not fully fulfilled by the Broadsword team.
 
 \begin{figure}[ht]
   \includegraphics[width=350px]{Images/getLoc.PNG}
-  \caption{aruba\_wrapper.py}
-  \label{fig:aruba\_wrapper.py}
+  \caption{aruba\textunderscore wrapper.py}
+  \label{arubawrapper.py}
 \end{figure}
 \begin{figure}[ht]
   \includegraphics[width=350px]{Images/LocLookup.JPG}

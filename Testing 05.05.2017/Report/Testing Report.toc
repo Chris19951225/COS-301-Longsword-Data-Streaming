@@ -1,0 +1,14 @@
+\contentsline {section}{\numberline {1}Introduction}{3}{section.1}
+\contentsline {section}{\numberline {2}Service Contracts}{3}{section.2}
+\contentsline {subsection}{\numberline {2.1}Retrieving and passing device MAC address.}{3}{subsection.2.1}
+\contentsline {subsection}{\numberline {2.2}Logging in and maintaining a session with Aruba ALE.}{3}{subsection.2.2}
+\contentsline {subsection}{\numberline {2.3}Processing the request and retrieving location.}{3}{subsection.2.3}
+\contentsline {subsection}{\numberline {2.4}Returning a location to the source of the request.}{4}{subsection.2.4}
+\contentsline {section}{\numberline {3}Non-Functional Requirements}{4}{section.3}
+\contentsline {subsection}{\numberline {3.1}Level of concurrency of the task.}{4}{subsection.3.1}
+\contentsline {subsection}{\numberline {3.2}Performance of the request processing (time taken to receive a response).}{5}{subsection.3.2}
+\contentsline {subsection}{\numberline {3.3}Maintainability and modularity of the code and repository.}{5}{subsection.3.3}
+\contentsline {subsection}{\numberline {3.4}Integrability and ease of transfer into a final system.}{5}{subsection.3.4}
+\contentsline {section}{\numberline {4}Use Cases}{5}{section.4}
+\contentsline {subsection}{\numberline {4.1}Upstream communication.}{6}{subsection.4.1}
+\contentsline {subsection}{\numberline {4.2}Downstream communication.}{6}{subsection.4.2}
