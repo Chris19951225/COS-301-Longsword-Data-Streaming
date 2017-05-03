@@ -103,6 +103,7 @@ In query\_resolver.py, the handler function receives a request, it then passes t
 
 
 \subsection{Processing the request and retrieving location.}
+
 \begin{flushleft}MARK: 10\end{flushleft}
 In the python file query\_resolver.py, Broadsword provides the options of using mock data to test their program or to follow standard procedure and use real data from Aruba by connecting to it through location\_lookup.py, building\_lookup.py and floor\_lookup.py. The previously mentioned python files each connect to Aruba and all seperately log in by utilising aruba\_wrapper.py which establishes and maintains a session with Aruba. Each class also filters their own JSON objects that are returned by Aruba and return only the necessary data thus fulfilling the requirement of processing requests and retrieving location.   
 \begin{flushleft}This functional requirement was not fully fulfilled by the Broadsword team.\end{flushleft}
@@ -160,5 +161,7 @@ The file named "publisher.py" will write to nsqd port 4150, this is their upstre
 
 \subsection{Downstream communication.}
 \begin{flushleft}MARK: 8\end{flushleft}
+
+Consumers make use of a HTTP /lookup endpoint. Consumers are introduced to topics through making use of the addresses of Broadsword's nsqlookupd instance. In their case it would be host name '127.0.0.1' and port '4161'. This would be their downstream communication.
 
 \end{document}
