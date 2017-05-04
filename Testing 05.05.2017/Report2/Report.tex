@@ -231,6 +231,7 @@ Whilst the code is very modular in format allowing for certain pieces to be easi
 This non-functional requirement was partially fulfilled by the Broadsword team.
 \end{flushleft}
 
+
 \begin{figure}[ht]
   \includegraphics[width=350px]{Images/nocomments.jpg}
   \caption{No Comments}
@@ -263,7 +264,9 @@ The file named "publisher.py" will write to nsqd port 4150, this is their upstre
 
 
 \begin{figure}[ht]
-  \includegraphics[width=350px]{Images/publisher.PNG}  
+  \includegraphics[width=350px]{Images/publisher.PNG}
+   \caption{Upstream channel}
+  \label{Upstream channel initializer}  
 \end{figure}
 
 \subsection{Downstream communication.}
@@ -277,11 +280,15 @@ Consumers make use of a HTTP /lookup endpoint. Consumers are introduced to topic
 
 
 \begin{figure}[ht]
-  \includegraphics[width=350px]{Images/readerInitialize.PNG}  
+  \includegraphics[width=350px]{Images/readerInitialize.PNG}
+  \caption{Downstream channel initialize}
+  \label{Downstream channel initializer}  
 \end{figure}
 
 \begin{figure}[ht]
-  \includegraphics[width=350px]{Images/readerExecute.PNG}  
+  \includegraphics[width=350px]{Images/readerExecute.PNG}
+  \caption{Downstream channel execute}
+  \label{Downstream channel executer}  
 \end{figure}
 
 \end{document}
