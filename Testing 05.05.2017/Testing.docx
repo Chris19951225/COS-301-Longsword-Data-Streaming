@@ -15,6 +15,7 @@ Non-functional Requirements (Each get mark out of 10 with comment)
 2. Performance of the request processing (time taken to receive a response). - Ritz
 3. Maintainability and modularity of the code and repository. - Lucian
 4. Integrability and ease of transfer into a final system. - Peter
+5. Security. - Lucian
 
 Use-Case (Mark out of 10 with comment)
 
