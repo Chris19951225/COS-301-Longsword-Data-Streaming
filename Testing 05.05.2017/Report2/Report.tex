@@ -74,7 +74,7 @@ Compiled By \\[\baselineskip]
 \tableofcontents
 
 \newpage
-\section{Introduction}
+
 \section{Introduction}
 \begin{flushleft}
 For this phase we will be testing the Data module of the BroadSword Team. We have split the testing phase according to Functional Requirements, Non-Functional Requirements and Use Cases. 
@@ -136,7 +136,7 @@ There is however a grave issue with this approach as each time the get() functio
 
 
 
-
+\newpage
 \subsection{Processing the request and retrieving location.}
 
 \begin{flushleft}
@@ -156,7 +156,7 @@ This functional requirement was not fully fulfilled by the Broadsword team.
   \caption{aruba\textunderscore wrapper.py}
   \label{arubawrapper.py}
 \end{figure}
-
+\newpage
 \begin{figure}[ht]
   \includegraphics[width=350px]{Images/LocLookup.JPG}
   \caption{Mock JSON}
@@ -184,7 +184,7 @@ This functional requirement was fulfilled by the Broadsword team.
   \label{fig:JSON returned}
 \end{figure}
 
-
+\newpage
 \section{Non-Functional Requirements}
 
 \subsection{Level of concurrency of the task.}
@@ -234,7 +234,7 @@ This non-functional requirement was not fulfilled by the Broadsword team.
   \caption{Number of requests processed in 60 Seconds}
   \label{Number of Requests}
 \end{figure}
-
+\newpage
 \begin{figure}[ht]
   \includegraphics[width=350px]{Images/timer.png}
   \caption{Code inserted to test the number of requests processed in 60 seconds}
@@ -242,6 +242,7 @@ This non-functional requirement was not fulfilled by the Broadsword team.
 
 \end{figure}
 
+\newpage
 \subsection{Maintainability and modularity of the code and repository.}
 
 \begin{flushleft}
@@ -264,6 +265,7 @@ Finally, the GitHub repository is disorganised. It has been divided into a numbe
 All of the above considered Broadsword receives the mark of 4/10 for this section.
 \end{flushleft}
 
+
 \subsection{Integrability and ease of transfer into a final system.}
 \begin{flushleft}
 MARK: 5
@@ -277,13 +279,15 @@ Whilst the code is very modular in format allowing for certain pieces to be easi
 This non-functional requirement was partially fulfilled by the Broadsword team.
 \end{flushleft}
 
-
+\newpage
 \begin{figure}[ht]
   \includegraphics[width=350px]{Images/nocomments.jpg}
   \caption{No Comments}
   \label{Figure showing the lack of comments and explanation}
 \end{figure}
 
+\newpage
+\newpage
 \section{Use Cases}
 
 \begin{flushleft}
@@ -337,6 +341,7 @@ Consumers make use of a HTTP /lookup endpoint. Consumers are introduced to topic
   \label{Downstream channel executer}  
 \end{figure}
 
+\newpage
 \subsection{Security.}
 \begin{flushleft}
 MARK: 8
@@ -351,7 +356,7 @@ This was a very mindful decision on Broadsword’s part and a nice touch, howeve
 \end{flushleft}
 
 \begin{figure}[ht]
-  \includegraphics[width=350px]{Images/Icorrect_Password.png}
+  \includegraphics[width=350px]{Images/Incorrect_Password.png}
   \caption{Exception occurring when an incorrect password is used.}
   \label{Terminal output.}  
 \end{figure}
