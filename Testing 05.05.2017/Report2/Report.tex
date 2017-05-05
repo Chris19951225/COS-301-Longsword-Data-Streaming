@@ -96,7 +96,7 @@ We will be testing the various cases and giving a brief description of how we te
 
 \section{Testing Methods}
 \begin{flushleft}
-The testing of the Data module becomes more complex due to the fact that multiple independent components are used to achieve the purpose of data streaming. This then means that we had to integrate code within the files given us so that we could effectively and accurately test the system given to us. With the regard to the aforementioned, it can be clearly seen that the use of any form of a unit testing framework would be difficult to implement and thus we opted for the integrated code test. This form of testing also shows which part/s of the code given to us performs its actions to the necessary pedigree and which part/s do not.
+The testing of the Data module becomes more complex due to the fact that multiple independent components are used to achieve the purpose of data streaming. This then means that we had to integrate code within the files given us so that we could effectively and accurately test the system given to us. With the regard to the aforementioned, it can be clearly seen that the use of any form of a unit testing framework would be difficult to implement and thus we opted for the integrated code test. This form of testing also shows which part/s of the code given to us performed its actions to the necessary pedigree and which part/s did not.
 \end{flushleft}
 
 \newpage
@@ -411,5 +411,10 @@ The issue with the current test cases is that although the coverage may seem ext
 \end{figure}
 
 \section{Conclusion}
+\begin{flushleft}
+In conclusion, as a team we felt that the Broadsword Data team only implemented the core functionality of the module at hand and did not focus the majority of their efforts into making sure that high speed data streaming takes place at all times. This could have been misleading by the fact that requests can be issued to the NSQ Server at a very high rate, but this is merely adding to the queue and these requests are not serviced in ample time so as to serve the task at hand. 
+\\
+After taking into consideration all the tests performed with quantitative and qualitative data, and after critical assessment of their code, we as a team have come to a conclusion of a mark of 73/120 , which translates to a percentage of 60.8\%. 
+\end{flushleft}
 
 \end{document}
