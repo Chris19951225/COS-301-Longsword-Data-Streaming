@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6210 64-bit) (preloaded format=pdflatex 2017.2.16)  5 MAY 2017 16:14
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6210 64-bit) (preloaded format=pdflatex 2017.2.16)  5 MAY 2017 18:18
 entering extended mode
 **./Report.tex
 (Report.tex
@@ -529,20 +529,7 @@ LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 79.
 LaTeX Font Info:    ... okay on input line 79.
 LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 79.
 LaTeX Font Info:    ... okay on input line 79.
- ("C:\Program Files\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
-[Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count101
-\scratchdimen=\dimen117
-\scratchbox=\box26
-\nofMPsegments=\count102
-\nofMParguments=\count103
-\everyMPshowfont=\toks18
-\MPscratchCnt=\count104
-\MPscratchDim=\dimen118
-\MPnumerator=\count105
-\makeMPintoPDFobject=\count106
-\everyMPtoPDFconversion=\toks19
-) ("C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\epstopdf-base.sty"
+ ("C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\epstopdf-base.sty"
 Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\grfext.sty"
@@ -589,7 +576,7 @@ G,.JBIG2,.JB2,.eps]
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-\AtBeginShipoutBox=\box27
+\AtBeginShipoutBox=\box26
 ("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\color.sty"
 Package: color 2016/07/10 v1.1e Standard LaTeX Color (DPC)
 
@@ -606,7 +593,7 @@ Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
 ("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\gettitlestring.sty"
 Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
-\c@section@level=\count107
+\c@section@level=\count101
 )
 LaTeX Info: Redefining \ref on input line 79.
 LaTeX Info: Redefining \pageref on input line 79.
@@ -617,7 +604,7 @@ LaTeX Info: Redefining \nameref on input line 79.
 \openout3 = `Report.out'.
 
 
-<Images/UP_Logo.PNG, id=71, 900.36375pt x 269.50688pt>
+<Images/UP_Logo.PNG, id=75, 900.36375pt x 269.50688pt>
 File: Images/UP_Logo.PNG Graphic file (type png)
 
 <use Images/UP_Logo.PNG>
@@ -625,8 +612,8 @@ Package pdftex.def Info: Images/UP_Logo.PNG used on input line 81.
 (pdftex.def)             Requested size: 351.31378pt x 105.1607pt.
  [1
 
-{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map} <./Images/UP_Logo.PNG>] (R
-eport.toc
+{C:/Users/Rits/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map} <./Images/UP_
+Logo.PNG>] (Report.toc
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <7> on input line 4.
 LaTeX Font Info:    External font `cmex10' loaded for size
@@ -636,56 +623,56 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 \openout4 = `Report.toc'.
 
  [2] [3]
-<Images/Handler.png, id=113, 499.8675pt x 266.49562pt>
+<Images/Handler.png, id=118, 499.8675pt x 266.49562pt>
 File: Images/Handler.png Graphic file (type png)
 
 <use Images/Handler.png>
 Package pdftex.def Info: Images/Handler.png used on input line 119.
 (pdftex.def)             Requested size: 351.31378pt x 187.302pt.
  [4 <./Images/Handler.png>]
-<Images/Get_Function.png, id=119, 537.00626pt x 282.05376pt>
+<Images/Get_Function.png, id=124, 537.00626pt x 282.05376pt>
 File: Images/Get_Function.png Graphic file (type png)
 
 <use Images/Get_Function.png>
 Package pdftex.def Info: Images/Get_Function.png used on input line 137.
 (pdftex.def)             Requested size: 351.31378pt x 184.5206pt.
 
-<Images/Aruba_Returns.png, id=121, 499.8675pt x 277.035pt>
+<Images/Aruba_Returns.png, id=126, 499.8675pt x 277.035pt>
 File: Images/Aruba_Returns.png Graphic file (type png)
 
 <use Images/Aruba_Returns.png>
 Package pdftex.def Info: Images/Aruba_Returns.png used on input line 147.
 (pdftex.def)             Requested size: 351.31378pt x 194.70943pt.
  [5 <./Images/Get_Function.png> <./Images/Aruba_Returns.png>] <Images/getLoc.PN
-G, id=129, 681.29532pt x 496.10344pt>
+G, id=134, 681.29532pt x 496.10344pt>
 File: Images/getLoc.PNG Graphic file (type png)
 
 <use Images/getLoc.PNG>
 Package pdftex.def Info: Images/getLoc.PNG used on input line 170.
 (pdftex.def)             Requested size: 351.31378pt x 255.81784pt.
  [6 <./Images/getLoc.PNG>]
-<Images/LocLookup.JPG, id=136, 706.89093pt x 499.11469pt>
+<Images/LocLookup.JPG, id=141, 706.89093pt x 499.11469pt>
 File: Images/LocLookup.JPG Graphic file (type jpg)
 
 <use Images/LocLookup.JPG>
 Package pdftex.def Info: Images/LocLookup.JPG used on input line 176.
 (pdftex.def)             Requested size: 351.31378pt x 248.0564pt.
 
-<Images/jsonreturn.jpg, id=137, 1190.19656pt x 68.50594pt>
+<Images/jsonreturn.jpg, id=142, 1190.19656pt x 68.50594pt>
 File: Images/jsonreturn.jpg Graphic file (type jpg)
 
 <use Images/jsonreturn.jpg>
 Package pdftex.def Info: Images/jsonreturn.jpg used on input line 197.
 (pdftex.def)             Requested size: 351.31378pt x 20.22057pt.
  [7 <./Images/LocLookup.JPG> <./Images/jsonreturn.jpg>] <Images/concurrency.PNG
-, id=145, 481.04718pt x 86.57344pt>
+, id=150, 481.04718pt x 86.57344pt>
 File: Images/concurrency.PNG Graphic file (type png)
 
 <use Images/concurrency.PNG>
 Package pdftex.def Info: Images/concurrency.PNG used on input line 219.
 (pdftex.def)             Requested size: 351.31378pt x 63.22713pt.
 
-<Images/concurrency2.PNG, id=146, 420.06938pt x 109.1578pt>
+<Images/concurrency2.PNG, id=151, 420.06938pt x 109.1578pt>
 File: Images/concurrency2.PNG Graphic file (type png)
 
 <use Images/concurrency2.PNG>
@@ -696,35 +683,35 @@ File: Images/Aruba_Returns.png Graphic file (type png)
 Package pdftex.def Info: Images/Aruba_Returns.png used on input line 248.
 (pdftex.def)             Requested size: 351.31378pt x 194.70943pt.
  [8 <./Images/concurrency.PNG> <./Images/concurrency2.PNG>]
-<Images/timer.png, id=155, 876.27374pt x 493.0922pt>
+<Images/timer.png, id=160, 876.27374pt x 493.0922pt>
 File: Images/timer.png Graphic file (type png)
  <use Images/timer.png>
 Package pdftex.def Info: Images/timer.png used on input line 254.
 (pdftex.def)             Requested size: 351.31378pt x 197.69234pt.
 
 [9 <./Images/timer.png>] [10]
-<Images/nocomments.jpg, id=166, 504.38437pt x 682.04813pt>
+<Images/nocomments.jpg, id=171, 504.38437pt x 682.04813pt>
 File: Images/nocomments.jpg Graphic file (type jpg)
 
 <use Images/nocomments.jpg>
 Package pdftex.def Info: Images/nocomments.jpg used on input line 299.
 (pdftex.def)             Requested size: 351.31378pt x 475.05759pt.
  [11 <./Images/nocomments.jpg>]
-<Images/publisher.PNG, id=172, 340.27126pt x 49.68562pt>
+<Images/publisher.PNG, id=177, 340.27126pt x 49.68562pt>
 File: Images/publisher.PNG Graphic file (type png)
 
 <use Images/publisher.PNG>
 Package pdftex.def Info: Images/publisher.PNG used on input line 332.
 (pdftex.def)             Requested size: 351.31378pt x 51.30109pt.
 
-<Images/readerInitialize.PNG, id=173, 880.03781pt x 55.70813pt>
+<Images/readerInitialize.PNG, id=178, 880.03781pt x 55.70813pt>
 File: Images/readerInitialize.PNG Graphic file (type png)
 
 <use Images/readerInitialize.PNG>
 Package pdftex.def Info: Images/readerInitialize.PNG used on input line 348.
 (pdftex.def)             Requested size: 351.31378pt x 22.23865pt.
 
-<Images/readerExecute.PNG, id=174, 1011.02719pt x 82.05656pt>
+<Images/readerExecute.PNG, id=179, 1011.02719pt x 82.05656pt>
 File: Images/readerExecute.PNG Graphic file (type png)
 
 <use Images/readerExecute.PNG>
@@ -732,44 +719,44 @@ Package pdftex.def Info: Images/readerExecute.PNG used on input line 354.
 (pdftex.def)             Requested size: 351.31378pt x 28.51363pt.
  [12 <./Images/publisher.PNG> <./Images/readerInitialize.PNG> <./Images/readerE
 xecute.PNG>]
-<Images/Incorrect_Password.png, id=182, 736.7525pt x 472.76625pt>
+<Images/Incorrect_Password.png, id=187, 736.7525pt x 472.76625pt>
 File: Images/Incorrect_Password.png Graphic file (type png)
 
 <use Images/Incorrect_Password.png>
 Package pdftex.def Info: Images/Incorrect_Password.png used on input line 374.
 (pdftex.def)             Requested size: 351.31378pt x 225.43196pt.
  [13 <./Images/Incorrect_Password.png>]
-<Images/MAC.jpg, id=190, 289.08pt x 149.05687pt>
+<Images/MAC.jpg, id=195, 289.08pt x 149.05687pt>
 File: Images/MAC.jpg Graphic file (type jpg)
  <use Images/MAC.jpg>
 Package pdftex.def Info: Images/MAC.jpg used on input line 402.
 (pdftex.def)             Requested size: 351.31378pt x 181.15541pt.
 
-<Images/Mock.jpg, id=191, 697.10437pt x 187.45032pt>
+<Images/Mock.jpg, id=196, 697.10437pt x 187.45032pt>
 File: Images/Mock.jpg Graphic file (type jpg)
  <use Images/Mock.jpg>
 Package pdftex.def Info: Images/Mock.jpg used on input line 408.
 (pdftex.def)             Requested size: 351.31378pt x 94.46858pt.
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 413.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 415.
 
 [14 <./Images/MAC.jpg> <./Images/Mock.jpg>]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 413.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 415.
  (Report.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 413.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 413.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 415.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 415.
 Package rerunfilecheck Info: File `Report.out' has not changed.
-(rerunfilecheck)             Checksum: 21BF5B7C121CBB58E398717956291408;1321.
+(rerunfilecheck)             Checksum: 7A7A140667878D4B53A32D6536DBA63F;1368.
 
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 413.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 415.
  ) 
 Here is how much of TeX's memory you used:
- 6009 strings out of 493333
- 87775 string characters out of 3139197
- 180809 words of memory out of 3000000
- 9427 multiletter control sequences out of 15000+200000
+ 5717 strings out of 493333
+ 83891 string characters out of 3139197
+ 177017 words of memory out of 3000000
+ 9137 multiletter control sequences out of 15000+200000
  5758 words of font info for 21 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  28i,6n,28p,727b,373s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -779,9 +766,9 @@ les/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><C:/Program Files/MiK
 TeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX 2.9/f
 onts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type
 1/public/amsfonts/cm/cmr17.pfb>
-Output written on Report.pdf (14 pages, 1452919 bytes).
+Output written on Report.pdf (14 pages, 1446002 bytes).
 PDF statistics:
- 232 PDF objects out of 1000 (max. 8388607)
- 50 named destinations out of 1000 (max. 500000)
- 222 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 237 PDF objects out of 1000 (max. 8388607)
+ 51 named destinations out of 1000 (max. 500000)
+ 230 words of extra memory for PDF output out of 10000 (max. 10000000)
 
