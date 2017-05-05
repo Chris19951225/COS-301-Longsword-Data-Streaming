@@ -116,6 +116,7 @@ MARK: 4
 
 \begin{flushleft}
 The Broadsword data team does indeed log in to the Aruba ALE and they do this by making use of the python urllib2 library. Their query\textunderscore resolver.py entry point takes arguments for the various ALE login fields, the arguments are passed between classes until reaching the Aruba class which is instantiated with the details. This Aruba class contains a method called get() which effectively creates a URL, containing the address for accessing Aruba appended by the current request. The login is then handled with a password manager and finally the function returns the JSON formatted response from Aruba. The function can be seen in the figure below.
+\end{flushleft}
 
 \begin{figure}[ht]
   \includegraphics[width=350px]{Images/Get_Function.png}
@@ -123,6 +124,7 @@ The Broadsword data team does indeed log in to the Aruba ALE and they do this by
   \label{get() function.}
 \end{figure}
 
+\begin{flushleft}
 There is however a grave issue with this approach as each time the get() function is called, which occurs for every request, the login to Aruba needs to happen again as a session is not maintained. This results in a massive time overhead especially considering that the program is intended to be scaled to handle tens of thousands of requests a second. This is simply not possible with broadsword’s code as it stands, as each request-response pair to Aruba is taking roughly a second to complete. This can been seen in the diagram below where only 66 requests were processed in a minute.
 \end{flushleft}
 
@@ -241,6 +243,26 @@ This non-functional requirement was not fulfilled by the Broadsword team.
 \end{figure}
 
 \subsection{Maintainability and modularity of the code and repository.}
+
+\begin{flushleft}
+MARK: 4
+\end{flushleft}
+
+\begin{flushleft}
+For someone not intimately familiar with the code, it is fairly difficult to understand the flow of the program. There is decent documentation on getting the code operational however the explanation of how the program actually works is lacking and to make matters worse there are also no comments in the code to explain what is happening. This could make maintaining the code an issue as if the developers need to return to it after a long time even they may have issues remembering exactly how the program flows and functions.
+\end{flushleft}
+
+\begin{flushleft}
+The code is very modular having been separated effectively into separate classes based on function, which is good however once again it makes the program difficult to follow without any commenting.
+\end{flushleft}
+
+\begin{flushleft}
+Finally, the GitHub repository is disorganised. It has been divided into a number of branches that do each each have an explained function however, as the repository stands, the branches are unsynchronised and not fulfilling their intended function.
+\end{flushleft}
+
+\begin{flushleft}
+All of the above considered Broadsword receives the mark of 4/10 for this section.
+\end{flushleft}
 
 \subsection{Integrability and ease of transfer into a final system.}
 \begin{flushleft}
