@@ -1,15 +1,17 @@
 \contentsline {section}{\numberline {1}Introduction}{3}{section.1}
-\contentsline {section}{\numberline {2}Service Contracts}{3}{section.2}
-\contentsline {subsection}{\numberline {2.1}Retrieving and passing device MAC address.}{3}{subsection.2.1}
-\contentsline {subsection}{\numberline {2.2}Logging in and maintaining a session with Aruba ALE.}{3}{subsection.2.2}
-\contentsline {subsection}{\numberline {2.3}Processing the request and retrieving location.}{5}{subsection.2.3}
-\contentsline {subsection}{\numberline {2.4}Returning a location to the source of the request.}{6}{subsection.2.4}
-\contentsline {section}{\numberline {3}Non-Functional Requirements}{7}{section.3}
-\contentsline {subsection}{\numberline {3.1}Level of concurrency of the task.}{7}{subsection.3.1}
-\contentsline {subsection}{\numberline {3.2}Performance of the request processing.}{7}{subsection.3.2}
-\contentsline {subsection}{\numberline {3.3}Maintainability and modularity of the code and repository.}{9}{subsection.3.3}
-\contentsline {subsection}{\numberline {3.4}Integrability and ease of transfer into a final system.}{9}{subsection.3.4}
-\contentsline {section}{\numberline {4}Use Cases}{11}{section.4}
-\contentsline {subsection}{\numberline {4.1}Upstream communication.}{11}{subsection.4.1}
-\contentsline {subsection}{\numberline {4.2}Downstream communication.}{11}{subsection.4.2}
-\contentsline {subsection}{\numberline {4.3}Security.}{12}{subsection.4.3}
+\contentsline {section}{\numberline {2}Testing Methods}{3}{section.2}
+\contentsline {section}{\numberline {3}Service Contracts}{4}{section.3}
+\contentsline {subsection}{\numberline {3.1}Retrieving and passing device MAC address.}{4}{subsection.3.1}
+\contentsline {subsection}{\numberline {3.2}Logging in and maintaining a session with Aruba ALE.}{4}{subsection.3.2}
+\contentsline {subsection}{\numberline {3.3}Processing the request and retrieving location.}{6}{subsection.3.3}
+\contentsline {subsection}{\numberline {3.4}Returning a location to the source of the request.}{7}{subsection.3.4}
+\contentsline {section}{\numberline {4}Non-Functional Requirements}{8}{section.4}
+\contentsline {subsection}{\numberline {4.1}Level of concurrency of the task.}{8}{subsection.4.1}
+\contentsline {subsection}{\numberline {4.2}Performance of the request processing.}{8}{subsection.4.2}
+\contentsline {subsection}{\numberline {4.3}Maintainability and modularity of the code and repository.}{10}{subsection.4.3}
+\contentsline {subsection}{\numberline {4.4}Integrability and ease of transfer into a final system.}{10}{subsection.4.4}
+\contentsline {section}{\numberline {5}Use Cases}{12}{section.5}
+\contentsline {subsection}{\numberline {5.1}Upstream communication.}{12}{subsection.5.1}
+\contentsline {subsection}{\numberline {5.2}Downstream communication.}{12}{subsection.5.2}
+\contentsline {subsection}{\numberline {5.3}Security.}{13}{subsection.5.3}
+\contentsline {section}{\numberline {6}Evaluation of Broadsword Test Cases}{13}{section.6}

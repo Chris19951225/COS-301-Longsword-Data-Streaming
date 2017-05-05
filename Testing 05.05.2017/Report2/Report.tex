@@ -53,6 +53,15 @@ Compiled By \\[\baselineskip]
 
  	GitHub Repository:  
  	\href{https://github.com/Chris19951225/COS-301-Longsword-Data-Streaming}{COS 301 Team Longsword Data GitHub Repository(Phase 4)}
+\\
+ 	Slack Group:  
+ 	\href{https://github.com/Chris19951225/COS-301-Longsword-Data-Streaming}{COS 301 Team Longsword Data GitHub Repository(Phase 4)}
+ 	\\
+ 	Scrum-board:  
+ 	\href{https://github.com/Chris19951225/COS-301-Longsword-Data-Streaming}{COS 301 Team Longsword Data GitHub Repository(Phase 4)}
+ 	\\
+ 	Burn-down Chart:  
+ 	\href{https://github.com/Chris19951225/COS-301-Longsword-Data-Streaming}{COS 301 Team Longsword Data GitHub Repository(Phase 4)}
 
 
 
@@ -77,7 +86,7 @@ Compiled By \\[\baselineskip]
 
 \section{Introduction}
 \begin{flushleft}
-For this phase we will be testing the Data module of the BroadSword Team. We have split the testing phase according to Functional Requirements, Non-Functional Requirements and Use Cases. 
+For this phase we will be testing the Data module of the BroadSword Team. We have split the testing phase according to Functional Requirements, Non-Functional Requirements, Use Cases and Testing Cases. 
 \end{flushleft}
 
 \begin{flushleft}
@@ -85,7 +94,12 @@ Their code was primarily coded in Python and used a NSQ message processing syste
 We will be testing the various cases and giving a brief description of how we tested followed by an explanation of the mark that was given to them.
 \end{flushleft}
 
+\section{Testing Methods}
+\begin{flushleft}
+The testing of the Data module becomes more complex due to the fact that multiple independent components are used to achieve the purpose of data streaming. This then means that we had to integrate code within the files given us so that we could effectively and accurately test the system given to us. With the regard to the aforementioned, it can be clearly seen that the use of any form of a unit testing framework would be difficult to implement and thus we opted for the integrated code test. This form of testing also shows which part/s of the code given to us performs its actions to the necessary pedigree and which part/s do not.
+\end{flushleft}
 
+\newpage
 \section{Service Contracts}
 
 \subsection{Retrieving and passing device MAC address.}
@@ -94,7 +108,7 @@ MARK: 10
 \end{flushleft}
 
 \begin{flushleft}
-The access module sends a location request to the data module via the NSQ server,the access module has to subscribes to a topic.The main entry point of the system, query resolver.py, sends the mac address to the aruba server in a query to get the location of the device.
+The access module sends a location request to the data module via the NSQ server,the access module has to subscribes to a topic.The main entry point of the system, query resolver.py, sends the mac address to the Aruba server in a query to get the location of the device.
 In query resolver.py, the handler function receives a request, it then passes the mac address to the searcher function-which will create a query to get the location for the device.
 \end{flushleft}
 
@@ -118,6 +132,7 @@ MARK: 4
 The Broadsword data team does indeed log in to the Aruba ALE and they do this by making use of the python urllib2 library. Their query\textunderscore resolver.py entry point takes arguments for the various ALE login fields, the arguments are passed between classes until reaching the Aruba class which is instantiated with the details. This Aruba class contains a method called get() which effectively creates a URL, containing the address for accessing Aruba appended by the current request. The login is then handled with a password manager and finally the function returns the JSON formatted response from Aruba. The function can be seen in the figure below.
 \end{flushleft}
 
+\newpage
 \begin{figure}[ht]
   \includegraphics[width=350px]{Images/Get_Function.png}
   \caption{Implementation of the Aruba Wrapper class.}
@@ -125,7 +140,7 @@ The Broadsword data team does indeed log in to the Aruba ALE and they do this by
 \end{figure}
 
 \begin{flushleft}
-There is however a grave issue with this approach as each time the get() function is called, which occurs for every request, the login to Aruba needs to happen again as a session is not maintained. This results in a massive time overhead especially considering that the program is intended to be scaled to handle tens of thousands of requests a second. This is simply not possible with broadsword’s code as it stands, as each request-response pair to Aruba is taking roughly a second to complete. This can been seen in the diagram below where only 66 requests were processed in a minute.
+There is however a grave issue with this approach as each time the get() function is called, which occurs for every request, the login to Aruba needs to happen again as a session is not maintained. This results in a massive time overhead especially considering that the program is intended to be scaled to handle tens of thousands of requests a second. This is simply not possible with Broadswords code as it stands, as each request-response pair to Aruba is taking roughly a second to complete. This can been seen in the diagram below where only 73 requests were processed in a minute.
 \end{flushleft}
 
 \begin{figure}[ht]
@@ -144,7 +159,7 @@ MARK: 10
 \end{flushleft}
 
 \begin{flushleft}
-In the python file query\textunderscore resolver.py, Broadsword provides the options of using mock data to test their program or to follow standard procedure and use real data from Aruba by connecting to it through location\textunderscore lookup.py, building\textunderscore lookup.py and floor\textunderscore lookup.py. The previously mentioned python files each connect to Aruba and all seperately log in by utilising aruba\textunderscore wrapper.py which establishes and maintains a session with Aruba. Each class also filters their own JSON objects that are returned by Aruba and return only the necessary data thus fulfilling the requirement of processing requests and retrieving location. 
+In the python file query\textunderscore resolver.py, Broadsword provides the options of using mock data to test their program or to follow standard procedure and use real data from Aruba by connecting to it through location\textunderscore lookup.py, building\textunderscore lookup.py and floor\textunderscore lookup.py. The previously mentioned python files each connect to Aruba and all separately log in by utilising Aruba\textunderscore wrapper.py which establishes and maintains a session with Aruba. Each class also filters their own JSON objects that are returned by Aruba and return only the necessary data thus fulfilling the requirement of processing requests and retrieving location. 
 \end{flushleft}
   
 \begin{flushleft}
@@ -153,7 +168,7 @@ This functional requirement was not fully fulfilled by the Broadsword team.
 
 \begin{figure}[ht]
   \includegraphics[width=350px]{Images/getLoc.PNG}
-  \caption{aruba\textunderscore wrapper.py}
+  \caption{Aruba\textunderscore wrapper.py}
   \label{arubawrapper.py}
 \end{figure}
 \newpage
@@ -171,7 +186,7 @@ MARK: 8
 \end{flushleft}
 
 \begin{flushleft}
-After the Aruba ALE connection is made by the aruba-wrapper class, the results of the location query are then delt with in the LocationLookup class. This class instantiates and exectues the aruba-wrapper implementation and then processes the JSON results to filter out what is needed. 
+After the Aruba ALE connection is made by the Aruba-wrapper class, the results of the location query are then delt with in the LocationLookup class. This class instantiates and executes the Aruba-wrapper implementation and then processes the JSON results to filter out what is needed. 
 \end{flushleft}
 
 \begin{flushleft}
@@ -193,7 +208,7 @@ MARK: 0
 \end{flushleft}
 
 \begin{flushleft}
-Broadsword made use of a server known as NSQ which is widely known for its message passing based procedures. Whilst the NSQ core was built in Go (a programming language with built in concurreny), Broadsword did not seem to make use of any of those concurrent features in their code. This was made apparent in testNavigationConsumer.py where each NSQ action was made on after the other with no concurrency apparent anywhere in terms of mac address processing and message passing. In terms of concurrent programming in general, there is none in any of the code presented by Broadsword. 
+Broadsword made use of a server known as NSQ which is widely known for its message passing based procedures. Whilst the NSQ core was built in Go (a programming language with built in concurrent), Broadsword did not seem to make use of any of those concurrent features in their code. This was made apparent in testNavigationConsumer.py where each NSQ action was made on after the other with no concurrency apparent anywhere in terms of mac address processing and message passing. In terms of concurrent programming in general, there is none in any of the code presented by Broadsword. 
 \end{flushleft}
 
 \begin{flushleft}
@@ -214,7 +229,7 @@ This non-functional requirement was not fulfilled by the Broadsword team.
 
 \subsection{Performance of the request processing.}
 \begin{flushleft}
-MARK: 1
+MARK: 2
 \end{flushleft}
 
 \begin{flushleft}
@@ -222,7 +237,7 @@ Broadsword used a NSQ server which is a message passing system that primarily re
 \end{flushleft}
 
 \begin{flushleft}
-As can be seen from the screen-shots below, within the duration of 60 seconds, the system only managed to return 63 Location objects for a single mac address. In terms of real-world functionality, this would mean a significant bottleneck on the system. This is because the system would need at a minimum roughly 30 000 requests to be fulfilled in a matter of 60 seconds. In the regard of high speed data streaming, the Broadsword Data module has failed.
+As can be seen from the screen-shots below, within the duration of 60 seconds, the system only managed to return 73 Location objects for a single mac address. In terms of real-world functionality, this would mean a significant bottleneck on the system. This is because the system would need at a minimum roughly 30 000 requests to be fulfilled in a matter of 60 seconds. In the regard of high speed data streaming, the Broadsword Data module has failed.
 \end{flushleft}
 
 \begin{flushleft}
@@ -230,7 +245,7 @@ This non-functional requirement was not fulfilled by the Broadsword team.
 \end{flushleft}
 
 \begin{figure}[ht]
-  \includegraphics[width=350px]{Images/RequestsSent.png}
+  \includegraphics[width=350px]{Images/Aruba_Returns.png}
   \caption{Number of requests processed in 60 Seconds}
   \label{Number of Requests}
 \end{figure}
@@ -272,7 +287,7 @@ MARK: 5
 \end{flushleft}
 
 \begin{flushleft}
-Whilst the code is very modular in format allowing for certain pieces to be easily matched to other systems, the code appears to be fragmented to a stage where there are a lot of inter-dependency between these classes. Meaning It would be harder to break the system up and mould it to a new system. Also the lack of commenting makes it difficult for one to see where things are implemented and what certain aspects of the code does. This makes it harder for a developer who is required to integrate the code who may not have necessarilly written it.
+Whilst the code is very modular in format allowing for certain pieces to be easily matched to other systems, the code appears to be fragmented to a stage where there are a lot of inter-dependency between these classes. Meaning It would be harder to break the system up and mould it to a new system. Also the lack of commenting makes it difficult for one to see where things are implemented and what certain aspects of the code does. This makes it harder for a developer who is required to integrate the code who may not have necessarily written it.
 \end{flushleft}
 
 \begin{flushleft}
@@ -348,11 +363,11 @@ MARK: 8
 \end{flushleft}
 
 \begin{flushleft}
-Broadsword requires that the login credentials for Aruba be passed into their program via parameters rather than being specified directly in the code. This creates a layer of security as had the details been hardcoded, anyone could access and discover them simply by looking at the code. This is especially true as the project is currently open source and available freely on github.
+Broadsword requires that the login credentials for Aruba be passed into their program via parameters rather than being specified directly in the code. This creates a layer of security as had the details been hard coded, anyone could access and discover them simply by looking at the code. This is especially true as the project is currently open source and available freely on GitHub.
 \end{flushleft}
 
 \begin{flushleft}
-This was a very mindful decision on Broadsword’s part and a nice touch, however they do not handle an incorrect password very effectively. Having actively made the decision to pass in the details via function arguments one could expect that they would handle an incorrect password however this is not the case and this is demonstrated in the figure below. An incorrect password results in an uncaught exception in the program. This is not desirable as one cannot decipher the cause simply by examining the error message.
+This was a very mindful decision on Broadswords part and a nice touch, however they do not handle an incorrect password very effectively. Having actively made the decision to pass in the details via function arguments one could expect that they would handle an incorrect password however this is not the case and this is demonstrated in the figure below. An incorrect password results in an uncaught exception in the program. This is not desirable as one cannot decipher the cause simply by examining the error message.
 \end{flushleft}
 
 \begin{figure}[ht]
@@ -365,6 +380,36 @@ This was a very mindful decision on Broadsword’s part and a nice touch, howeve
 The non-functional requirement is there however and as a result Broadsword receives the mark of 8/10 for this section.
 \end{flushleft}
 
+\section{Evaluation of Broadsword Test Cases}
+\begin{flushleft}
+MARK: 6
+\end{flushleft}
 
+\begin{flushleft}
+The Broadsword team makes use of extensive testing cases that caver all the information necessary for the Aruba connection as well as cover the mock information For the GIS module. This good coverage provides utility for successful test cases showing results that would be used in the final NAVUP system. 
+\end{flushleft}
+
+\begin{flushleft}
+The MAC address that is handed to the 'aruba\textunderscore wrapper' class, involved in the Aruba Ale connection and communication, are chosen randomly from a group of 4 available test cases. This provides some sense of variety in the testing of the system. 
+\end{flushleft}
+
+\begin{flushleft}
+The issue with the current test cases is that although the coverage may seem extensive, the fulfillment of the non-functional requirement of concurrency is not tested in any form. Concurrency is an important part of the data streaming service for the final NAVUP system. In conclusion for good test-case coverage, variety in MAC address testing as well as extensive mock input data and classes whilst keeping in mind the lack of concurrency and speed and its importance to the project, a mark of 6 is given.
+\end{flushleft}
+
+
+\begin{figure}[ht]
+  \includegraphics[width=350px]{Images/MAC.jpg}
+  \caption{The random selection of MAC addresses}
+  \label{The random selection of MAC addresses}  
+\end{figure}
+
+\begin{figure}[ht]
+  \includegraphics[width=350px]{Images/Mock.jpg}
+  \caption{An image showing tests on different parts of the data system}
+  \label{An image showing test date to test different part of the data system}  
+\end{figure}
+
+\section{Conclusion}
 
 \end{document}
