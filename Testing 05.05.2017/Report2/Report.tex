@@ -337,4 +337,29 @@ Consumers make use of a HTTP /lookup endpoint. Consumers are introduced to topic
   \label{Downstream channel executer}  
 \end{figure}
 
+\subsection{Security.}
+\begin{flushleft}
+MARK: 8
+\end{flushleft}
+
+\begin{flushleft}
+Broadsword requires that the login credentials for Aruba be passed into their program via parameters rather than being specified directly in the code. This creates a layer of security as had the details been hardcoded, anyone could access and discover them simply by looking at the code. This is especially true as the project is currently open source and available freely on github.
+\end{flushleft}
+
+\begin{flushleft}
+This was a very mindful decision on Broadsword’s part and a nice touch, however they do not handle an incorrect password very effectively. Having actively made the decision to pass in the details via function arguments one could expect that they would handle an incorrect password however this is not the case and this is demonstrated in the figure below. An incorrect password results in an uncaught exception in the program. This is not desirable as one cannot decipher the cause simply by examining the error message.
+\end{flushleft}
+
+\begin{figure}[ht]
+  \includegraphics[width=350px]{Images/Icorrect_Password.png}
+  \caption{Exception occurring when an incorrect password is used.}
+  \label{Terminal output.}  
+\end{figure}
+
+\begin{flushleft}
+The non-functional requirement is there however and as a result Broadsword receives the mark of 8/10 for this section.
+\end{flushleft}
+
+
+
 \end{document}
