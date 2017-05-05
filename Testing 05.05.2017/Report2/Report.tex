@@ -110,6 +110,30 @@ This functional requirement was fulfilled by the Broadsword team.
 
 \subsection{Logging in and maintaining a session with Aruba ALE.}
 
+\begin{flushleft}
+MARK: 4
+\end{flushleft}
+
+\begin{flushleft}
+The Broadsword data team does indeed log in to the Aruba ALE and they do this by making use of the python urllib2 library. Their query\textunderscore resolver.py entry point takes arguments for the various ALE login fields, the arguments are passed between classes until reaching the Aruba class which is instantiated with the details. This Aruba class contains a method called get() which effectively creates a URL, containing the address for accessing Aruba appended by the current request. The login is then handled with a password manager and finally the function returns the JSON formatted response from Aruba. The function can be seen in the figure below.
+
+\begin{figure}[ht]
+  \includegraphics[width=350px]{Images/Get_Function.png}
+  \caption{Implementation of the Aruba Wrapper class.}
+  \label{get() function.}
+\end{figure}
+
+There is however a grave issue with this approach as each time the get() function is called, which occurs for every request, the login to Aruba needs to happen again as a session is not maintained. This results in a massive time overhead especially considering that the program is intended to be scaled to handle tens of thousands of requests a second. This is simply not possible with broadsword’s code as it stands, as each request-response pair to Aruba is taking roughly a second to complete. This can been seen in the diagram below where only 66 requests were processed in a minute.
+\end{flushleft}
+
+\begin{figure}[ht]
+  \includegraphics[width=350px]{Images/Aruba_Returns.png}
+  \caption{The number of Aruba requests processed in one minute.}
+  \label{Terminal output.}
+\end{figure}
+
+
+
 
 \subsection{Processing the request and retrieving location.}
 
